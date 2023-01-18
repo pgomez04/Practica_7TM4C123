@@ -1,7 +1,7 @@
 /**************************************************************************//**
- * @file     system_TM4C129.h
+ * @file     system_LM4F.h
  * @brief    CMSIS Cortex-M4 Device Peripheral Access Layer Header File for
- *           TI Tiva TM4C129 Snowflake Class Devices
+ *           TI Tiva TM4C123 Class Devices
  * @version  V3.1
  * @date     15. May 2013
  *
@@ -23,8 +23,8 @@
  ******************************************************************************/
 
 
-#ifndef SYSTEM_TM4C129_H
-#define SYSTEM_TM4C129_H
+#ifndef SYSTEM_TM4C123_H
+#define SYSTEM_TM4C123_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -61,4 +61,4 @@ extern void SystemCoreClockUpdate (void);
 }
 #endif
 
-#endif /* SYSTEM_TM4C129_H */
+#endif /* SYSTEM_TM4C123_H */

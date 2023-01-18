@@ -1,15 +1,15 @@
 
 /****************************************************************************************************//**
- * @file     TM4C1294NCPDT.h
+ * @file     TM4C123GH6PM.h
  *
  * @brief    CMSIS Cortex-M4 Peripheral Access Layer Header File for
- *           TM4C1294NCPDT from Texas Instruments.
+ *           TM4C123GH6PM from Texas Instruments.
  *
  * @version  V12591
  * @date     19. February 2014
  *
  * @note     Generated with SVDConv V2.79v 
- *           from CMSIS SVD File 'TM4C1294NCPDT.svd.xml' Version 12591,
+ *           from CMSIS SVD File 'TM4C123GH6PM.svd.xml' Version 12591,
  *
  * @par      
  *           Software License Agreement
@@ -37,12 +37,12 @@
   * @{
   */
 
-/** @addtogroup TM4C1294NCPDT
+/** @addtogroup TM4C123GH6PM
   * @{
   */
 
-#ifndef TM4C1294NCPDT_H
-#define TM4C1294NCPDT_H
+#ifndef TM4C123GH6PM_H
+#define TM4C123GH6PM_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -65,7 +65,7 @@ typedef enum {
   DebugMonitor_IRQn             =  -4,              /*!<  12  Debug Monitor                                                    */
   PendSV_IRQn                   =  -2,              /*!<  14  Pendable request for system service                              */
   SysTick_IRQn                  =  -1,              /*!<  15  System Tick Timer                                                */
-/* ------------------  TM4C1294NCPDT Specific Interrupt Numbers  ------------------ */
+/* -------------------  TM4C123GH6PM Specific Interrupt Numbers  ------------------ */
   GPIOA_IRQn                    =   0,              /*!<   0  GPIOA                                                            */
   GPIOB_IRQn                    =   1,              /*!<   1  GPIOB                                                            */
   GPIOC_IRQn                    =   2,              /*!<   2  GPIOC                                                            */
@@ -93,75 +93,57 @@ typedef enum {
   TIMER2B_IRQn                  =  24,              /*!<  24  TIMER2B                                                          */
   COMP0_IRQn                    =  25,              /*!<  25  COMP0                                                            */
   COMP1_IRQn                    =  26,              /*!<  26  COMP1                                                            */
-  COMP2_IRQn                    =  27,              /*!<  27  COMP2                                                            */
   SYSCTL_IRQn                   =  28,              /*!<  28  SYSCTL                                                           */
   FLASH_CTRL_IRQn               =  29,              /*!<  29  FLASH_CTRL                                                       */
   GPIOF_IRQn                    =  30,              /*!<  30  GPIOF                                                            */
-  GPIOG_IRQn                    =  31,              /*!<  31  GPIOG                                                            */
-  GPIOH_IRQn                    =  32,              /*!<  32  GPIOH                                                            */
   UART2_IRQn                    =  33,              /*!<  33  UART2                                                            */
   SSI1_IRQn                     =  34,              /*!<  34  SSI1                                                             */
   TIMER3A_IRQn                  =  35,              /*!<  35  TIMER3A                                                          */
   TIMER3B_IRQn                  =  36,              /*!<  36  TIMER3B                                                          */
   I2C1_IRQn                     =  37,              /*!<  37  I2C1                                                             */
-  CAN0_IRQn                     =  38,              /*!<  38  CAN0                                                             */
-  CAN1_IRQn                     =  39,              /*!<  39  CAN1                                                             */
-  EMAC0_IRQn                    =  40,              /*!<  40  EMAC0                                                            */
-  HIB_IRQn                      =  41,              /*!<  41  HIB                                                              */
-  USB0_IRQn                     =  42,              /*!<  42  USB0                                                             */
-  PWM0_3_IRQn                   =  43,              /*!<  43  PWM0_3                                                           */
-  UDMA_IRQn                     =  44,              /*!<  44  UDMA                                                             */
-  UDMAERR_IRQn                  =  45,              /*!<  45  UDMAERR                                                          */
-  ADC1SS0_IRQn                  =  46,              /*!<  46  ADC1SS0                                                          */
-  ADC1SS1_IRQn                  =  47,              /*!<  47  ADC1SS1                                                          */
-  ADC1SS2_IRQn                  =  48,              /*!<  48  ADC1SS2                                                          */
-  ADC1SS3_IRQn                  =  49,              /*!<  49  ADC1SS3                                                          */
-  EPI0_IRQn                     =  50,              /*!<  50  EPI0                                                             */
-  GPIOJ_IRQn                    =  51,              /*!<  51  GPIOJ                                                            */
-  GPIOK_IRQn                    =  52,              /*!<  52  GPIOK                                                            */
-  GPIOL_IRQn                    =  53,              /*!<  53  GPIOL                                                            */
-  SSI2_IRQn                     =  54,              /*!<  54  SSI2                                                             */
-  SSI3_IRQn                     =  55,              /*!<  55  SSI3                                                             */
-  UART3_IRQn                    =  56,              /*!<  56  UART3                                                            */
-  UART4_IRQn                    =  57,              /*!<  57  UART4                                                            */
-  UART5_IRQn                    =  58,              /*!<  58  UART5                                                            */
-  UART6_IRQn                    =  59,              /*!<  59  UART6                                                            */
-  UART7_IRQn                    =  60,              /*!<  60  UART7                                                            */
-  I2C2_IRQn                     =  61,              /*!<  61  I2C2                                                             */
-  I2C3_IRQn                     =  62,              /*!<  62  I2C3                                                             */
-  TIMER4A_IRQn                  =  63,              /*!<  63  TIMER4A                                                          */
-  TIMER4B_IRQn                  =  64,              /*!<  64  TIMER4B                                                          */
-  TIMER5A_IRQn                  =  65,              /*!<  65  TIMER5A                                                          */
-  TIMER5B_IRQn                  =  66,              /*!<  66  TIMER5B                                                          */
-  SYSEXC_IRQn                   =  67,              /*!<  67  SYSEXC                                                           */
-  I2C4_IRQn                     =  70,              /*!<  70  I2C4                                                             */
-  I2C5_IRQn                     =  71,              /*!<  71  I2C5                                                             */
-  GPIOM_IRQn                    =  72,              /*!<  72  GPIOM                                                            */
-  GPION_IRQn                    =  73,              /*!<  73  GPION                                                            */
-  GPIOP0_IRQn                   =  76,              /*!<  76  GPIOP0                                                           */
-  GPIOP1_IRQn                   =  77,              /*!<  77  GPIOP1                                                           */
-  GPIOP2_IRQn                   =  78,              /*!<  78  GPIOP2                                                           */
-  GPIOP3_IRQn                   =  79,              /*!<  79  GPIOP3                                                           */
-  GPIOP4_IRQn                   =  80,              /*!<  80  GPIOP4                                                           */
-  GPIOP5_IRQn                   =  81,              /*!<  81  GPIOP5                                                           */
-  GPIOP6_IRQn                   =  82,              /*!<  82  GPIOP6                                                           */
-  GPIOP7_IRQn                   =  83,              /*!<  83  GPIOP7                                                           */
-  GPIOQ0_IRQn                   =  84,              /*!<  84  GPIOQ0                                                           */
-  GPIOQ1_IRQn                   =  85,              /*!<  85  GPIOQ1                                                           */
-  GPIOQ2_IRQn                   =  86,              /*!<  86  GPIOQ2                                                           */
-  GPIOQ3_IRQn                   =  87,              /*!<  87  GPIOQ3                                                           */
-  GPIOQ4_IRQn                   =  88,              /*!<  88  GPIOQ4                                                           */
-  GPIOQ5_IRQn                   =  89,              /*!<  89  GPIOQ5                                                           */
-  GPIOQ6_IRQn                   =  90,              /*!<  90  GPIOQ6                                                           */
-  GPIOQ7_IRQn                   =  91,              /*!<  91  GPIOQ7                                                           */
-  TIMER6A_IRQn                  =  98,              /*!<  98  TIMER6A                                                          */
-  TIMER6B_IRQn                  =  99,              /*!<  99  TIMER6B                                                          */
-  TIMER7A_IRQn                  = 100,              /*!< 100  TIMER7A                                                          */
-  TIMER7B_IRQn                  = 101,              /*!< 101  TIMER7B                                                          */
-  I2C6_IRQn                     = 102,              /*!< 102  I2C6                                                             */
-  I2C7_IRQn                     = 103,              /*!< 103  I2C7                                                             */
-  I2C8_IRQn                     = 109,              /*!< 109  I2C8                                                             */
-  I2C9_IRQn                     = 110               /*!< 110  I2C9                                                             */
+  QEI1_IRQn                     =  38,              /*!<  38  QEI1                                                             */
+  CAN0_IRQn                     =  39,              /*!<  39  CAN0                                                             */
+  CAN1_IRQn                     =  40,              /*!<  40  CAN1                                                             */
+  HIB_IRQn                      =  43,              /*!<  43  HIB                                                              */
+  USB0_IRQn                     =  44,              /*!<  44  USB0                                                             */
+  PWM0_3_IRQn                   =  45,              /*!<  45  PWM0_3                                                           */
+  UDMA_IRQn                     =  46,              /*!<  46  UDMA                                                             */
+  UDMAERR_IRQn                  =  47,              /*!<  47  UDMAERR                                                          */
+  ADC1SS0_IRQn                  =  48,              /*!<  48  ADC1SS0                                                          */
+  ADC1SS1_IRQn                  =  49,              /*!<  49  ADC1SS1                                                          */
+  ADC1SS2_IRQn                  =  50,              /*!<  50  ADC1SS2                                                          */
+  ADC1SS3_IRQn                  =  51,              /*!<  51  ADC1SS3                                                          */
+  SSI2_IRQn                     =  57,              /*!<  57  SSI2                                                             */
+  SSI3_IRQn                     =  58,              /*!<  58  SSI3                                                             */
+  UART3_IRQn                    =  59,              /*!<  59  UART3                                                            */
+  UART4_IRQn                    =  60,              /*!<  60  UART4                                                            */
+  UART5_IRQn                    =  61,              /*!<  61  UART5                                                            */
+  UART6_IRQn                    =  62,              /*!<  62  UART6                                                            */
+  UART7_IRQn                    =  63,              /*!<  63  UART7                                                            */
+  I2C2_IRQn                     =  68,              /*!<  68  I2C2                                                             */
+  I2C3_IRQn                     =  69,              /*!<  69  I2C3                                                             */
+  TIMER4A_IRQn                  =  70,              /*!<  70  TIMER4A                                                          */
+  TIMER4B_IRQn                  =  71,              /*!<  71  TIMER4B                                                          */
+  TIMER5A_IRQn                  =  92,              /*!<  92  TIMER5A                                                          */
+  TIMER5B_IRQn                  =  93,              /*!<  93  TIMER5B                                                          */
+  WTIMER0A_IRQn                 =  94,              /*!<  94  WTIMER0A                                                         */
+  WTIMER0B_IRQn                 =  95,              /*!<  95  WTIMER0B                                                         */
+  WTIMER1A_IRQn                 =  96,              /*!<  96  WTIMER1A                                                         */
+  WTIMER1B_IRQn                 =  97,              /*!<  97  WTIMER1B                                                         */
+  WTIMER2A_IRQn                 =  98,              /*!<  98  WTIMER2A                                                         */
+  WTIMER2B_IRQn                 =  99,              /*!<  99  WTIMER2B                                                         */
+  WTIMER3A_IRQn                 = 100,              /*!< 100  WTIMER3A                                                         */
+  WTIMER3B_IRQn                 = 101,              /*!< 101  WTIMER3B                                                         */
+  WTIMER4A_IRQn                 = 102,              /*!< 102  WTIMER4A                                                         */
+  WTIMER4B_IRQn                 = 103,              /*!< 103  WTIMER4B                                                         */
+  WTIMER5A_IRQn                 = 104,              /*!< 104  WTIMER5A                                                         */
+  WTIMER5B_IRQn                 = 105,              /*!< 105  WTIMER5B                                                         */
+  SYSEXC_IRQn                   = 106,              /*!< 106  SYSEXC                                                           */
+  PWM1_0_IRQn                   = 134,              /*!< 134  PWM1_0                                                           */
+  PWM1_1_IRQn                   = 135,              /*!< 135  PWM1_1                                                           */
+  PWM1_2_IRQn                   = 136,              /*!< 136  PWM1_2                                                           */
+  PWM1_3_IRQn                   = 137,              /*!< 137  PWM1_3                                                           */
+  PWM1_FAULT_IRQn               = 138               /*!< 138  PWM1_FAULT                                                       */
 } IRQn_Type;
 
 
@@ -176,14 +158,14 @@ typedef enum {
 
 /* ----------------Configuration of the Cortex-M4 Processor and Core Peripherals---------------- */
 #define __CM4_REV                 0x0102            /*!< Cortex-M4 Core Revision                                               */
-#define __MPU_PRESENT                  0            /*!< MPU present or not                                                    */
+#define __MPU_PRESENT                  1            /*!< MPU present or not                                                    */
 #define __NVIC_PRIO_BITS               3            /*!< Number of Bits used for Priority Levels                               */
 #define __Vendor_SysTickConfig         0            /*!< Set to 1 if different SysTick Config is used                          */
 #define __FPU_PRESENT                  1            /*!< FPU present or not                                                    */
 /** @} */ /* End of group Configuration_of_CMSIS */
 
 #include "../CMSIS/Include/core_cm4.h"                               /*!< Cortex-M4 processor and core peripherals                              */
-#include "../lib/system_TM4C129.h"                         /*!< TM4C1294NCPDT System                                                  */
+#include "../lib/system_TM4C123.h"                         /*!< TM4C123GH6PM System                                                   */
 
 
 /* ================================================================================ */
@@ -238,6 +220,45 @@ typedef struct {                                    /*!< WATCHDOG0 Structure    
 
 
 /* ================================================================================ */
+/* ================                      GPIOA                     ================ */
+/* ================================================================================ */
+
+
+/**
+  * @brief Register map for GPIOA peripheral (GPIOA)
+  */
+
+typedef struct {                                    /*!< GPIOA Structure                                                       */
+  __I  uint32_t  RESERVED0[255];
+  __IO uint32_t  DATA;                              /*!< GPIO Data                                                             */
+  __IO uint32_t  DIR;                               /*!< GPIO Direction                                                        */
+  __IO uint32_t  IS;                                /*!< GPIO Interrupt Sense                                                  */
+  __IO uint32_t  IBE;                               /*!< GPIO Interrupt Both Edges                                             */
+  __IO uint32_t  IEV;                               /*!< GPIO Interrupt Event                                                  */
+  __IO uint32_t  IM;                                /*!< GPIO Interrupt Mask                                                   */
+  __IO uint32_t  RIS;                               /*!< GPIO Raw Interrupt Status                                             */
+  __IO uint32_t  MIS;                               /*!< GPIO Masked Interrupt Status                                          */
+  __O  uint32_t  ICR;                               /*!< GPIO Interrupt Clear                                                  */
+  __IO uint32_t  AFSEL;                             /*!< GPIO Alternate Function Select                                        */
+  __I  uint32_t  RESERVED1[55];
+  __IO uint32_t  DR2R;                              /*!< GPIO 2-mA Drive Select                                                */
+  __IO uint32_t  DR4R;                              /*!< GPIO 4-mA Drive Select                                                */
+  __IO uint32_t  DR8R;                              /*!< GPIO 8-mA Drive Select                                                */
+  __IO uint32_t  ODR;                               /*!< GPIO Open Drain Select                                                */
+  __IO uint32_t  PUR;                               /*!< GPIO Pull-Up Select                                                   */
+  __IO uint32_t  PDR;                               /*!< GPIO Pull-Down Select                                                 */
+  __IO uint32_t  SLR;                               /*!< GPIO Slew Rate Control Select                                         */
+  __IO uint32_t  DEN;                               /*!< GPIO Digital Enable                                                   */
+  __IO uint32_t  LOCK;                              /*!< GPIO Lock                                                             */
+  __IO uint32_t  CR;                                /*!< GPIO Commit                                                           */
+  __IO uint32_t  AMSEL;                             /*!< GPIO Analog Mode Select                                               */
+  __IO uint32_t  PCTL;                              /*!< GPIO Port Control                                                     */
+  __IO uint32_t  ADCCTL;                            /*!< GPIO ADC Control                                                      */
+  __IO uint32_t  DMACTL;                            /*!< GPIO DMA Control                                                      */
+} GPIOA_Type;
+
+
+/* ================================================================================ */
 /* ================                      SSI0                      ================ */
 /* ================================================================================ */
 
@@ -257,9 +278,7 @@ typedef struct {                                    /*!< SSI0 Structure         
   __IO uint32_t  MIS;                               /*!< SSI Masked Interrupt Status                                           */
   __O  uint32_t  ICR;                               /*!< SSI Interrupt Clear                                                   */
   __IO uint32_t  DMACTL;                            /*!< SSI DMA Control                                                       */
-  __I  uint32_t  RESERVED0[998];
-  __IO uint32_t  PP;                                /*!< SSI Peripheral Properties                                             */
-  __I  uint32_t  RESERVED1;
+  __I  uint32_t  RESERVED0[1000];
   __IO uint32_t  CC;                                /*!< SSI Clock Configuration                                               */
 } SSI0_Type;
 
@@ -330,9 +349,9 @@ typedef struct {                                    /*!< I2C0 Structure         
   __IO uint32_t  MCLKOCNT;                          /*!< I2C Master Clock Low Timeout Count                                    */
   __I  uint32_t  RESERVED0;
   __IO uint32_t  MBMON;                             /*!< I2C Master Bus Monitor                                                */
-  __IO uint32_t  MBLEN;                             /*!< I2C Master Burst Length                                               */
-  __IO uint32_t  MBCNT;                             /*!< I2C Master Burst Count                                                */
-  __I  uint32_t  RESERVED1[498];
+  __I  uint32_t  RESERVED1[2];
+  __IO uint32_t  MCR2;                              /*!< I2C Master Configuration 2                                            */
+  __I  uint32_t  RESERVED2[497];
   __IO uint32_t  SOAR;                              /*!< I2C Slave Own Address                                                 */
   
   union {
@@ -346,11 +365,7 @@ typedef struct {                                    /*!< I2C0 Structure         
   __O  uint32_t  SICR;                              /*!< I2C Slave Interrupt Clear                                             */
   __IO uint32_t  SOAR2;                             /*!< I2C Slave Own Address 2                                               */
   __IO uint32_t  SACKCTL;                           /*!< I2C Slave ACK Control                                                 */
-  __I  uint32_t  RESERVED2[439];
-  __IO uint32_t  FIFODATA;                          /*!< I2C FIFO Data                                                         */
-  __IO uint32_t  FIFOCTL;                           /*!< I2C FIFO Control                                                      */
-  __IO uint32_t  FIFOSTATUS;                        /*!< I2C FIFO Status                                                       */
-  __I  uint32_t  RESERVED3[45];
+  __I  uint32_t  RESERVED3[487];
   __IO uint32_t  PP;                                /*!< I2C Peripheral Properties                                             */
   __IO uint32_t  PC;                                /*!< I2C Peripheral Configuration                                          */
 } I2C0_Type;
@@ -450,18 +465,14 @@ typedef struct {                                    /*!< PWM0 Structure         
   __IO uint32_t  _1_FLTSEN;                         /*!< PWM1 Fault Pin Logic Sense                                            */
   __I  uint32_t  _1_FLTSTAT0;                       /*!< PWM1 Fault Status 0                                                   */
   __I  uint32_t  _1_FLTSTAT1;                       /*!< PWM1 Fault Status 1                                                   */
-  __I  uint32_t  RESERVED3[29];
-  __IO uint32_t  _2_FLTSEN;                         /*!< PWM2 Fault Pin Logic Sense                                            */
+  __I  uint32_t  RESERVED3[30];
   __I  uint32_t  _2_FLTSTAT0;                       /*!< PWM2 Fault Status 0                                                   */
   __I  uint32_t  _2_FLTSTAT1;                       /*!< PWM2 Fault Status 1                                                   */
-  __I  uint32_t  RESERVED4[29];
-  __IO uint32_t  _3_FLTSEN;                         /*!< PWM3 Fault Pin Logic Sense                                            */
+  __I  uint32_t  RESERVED4[30];
   __I  uint32_t  _3_FLTSTAT0;                       /*!< PWM3 Fault Status 0                                                   */
   __I  uint32_t  _3_FLTSTAT1;                       /*!< PWM3 Fault Status 1                                                   */
   __I  uint32_t  RESERVED5[397];
   __IO uint32_t  PP;                                /*!< PWM Peripheral Properties                                             */
-  __I  uint32_t  RESERVED6;
-  __IO uint32_t  CC;                                /*!< PWM Clock Configuration                                               */
 } PWM0_Type;
 
 
@@ -524,14 +535,53 @@ typedef struct {                                    /*!< TIMER0 Structure       
   __IO uint32_t  RTCPD;                             /*!< GPTM RTC Predivide                                                    */
   __IO uint32_t  TAPS;                              /*!< GPTM Timer A Prescale Snapshot                                        */
   __IO uint32_t  TBPS;                              /*!< GPTM Timer B Prescale Snapshot                                        */
-  __I  uint32_t  RESERVED1[2];
-  __IO uint32_t  DMAEV;                             /*!< GPTM DMA Event                                                        */
-  __IO uint32_t  ADCEV;                             /*!< GPTM ADC Event                                                        */
-  __I  uint32_t  RESERVED2[979];
+  __IO uint32_t  TAPV;                              /*!< GPTM Timer A Prescale Value                                           */
+  __IO uint32_t  TBPV;                              /*!< GPTM Timer B Prescale Value                                           */
+  __I  uint32_t  RESERVED1[981];
   __IO uint32_t  PP;                                /*!< GPTM Peripheral Properties                                            */
-  __I  uint32_t  RESERVED3;
-  __IO uint32_t  CC;                                /*!< GPTM Clock Configuration                                              */
 } TIMER0_Type;
+
+
+/* ================================================================================ */
+/* ================                     WTIMER0                    ================ */
+/* ================================================================================ */
+
+
+/**
+  * @brief Register map for WTIMER0 peripheral (WTIMER0)
+  */
+
+typedef struct {                                    /*!< WTIMER0 Structure                                                     */
+  __IO uint32_t  CFG;                               /*!< GPTM Configuration                                                    */
+  __IO uint32_t  TAMR;                              /*!< GPTM Timer A Mode                                                     */
+  __IO uint32_t  TBMR;                              /*!< GPTM Timer B Mode                                                     */
+  __IO uint32_t  CTL;                               /*!< GPTM Control                                                          */
+  __IO uint32_t  SYNC;                              /*!< GPTM Synchronize                                                      */
+  __I  uint32_t  RESERVED0;
+  __IO uint32_t  IMR;                               /*!< GPTM Interrupt Mask                                                   */
+  __IO uint32_t  RIS;                               /*!< GPTM Raw Interrupt Status                                             */
+  __IO uint32_t  MIS;                               /*!< GPTM Masked Interrupt Status                                          */
+  __O  uint32_t  ICR;                               /*!< GPTM Interrupt Clear                                                  */
+  __IO uint32_t  TAILR;                             /*!< GPTM Timer A Interval Load                                            */
+  __IO uint32_t  TBILR;                             /*!< GPTM Timer B Interval Load                                            */
+  __IO uint32_t  TAMATCHR;                          /*!< GPTM Timer A Match                                                    */
+  __IO uint32_t  TBMATCHR;                          /*!< GPTM Timer B Match                                                    */
+  __IO uint32_t  TAPR;                              /*!< GPTM Timer A Prescale                                                 */
+  __IO uint32_t  TBPR;                              /*!< GPTM Timer B Prescale                                                 */
+  __IO uint32_t  TAPMR;                             /*!< GPTM TimerA Prescale Match                                            */
+  __IO uint32_t  TBPMR;                             /*!< GPTM TimerB Prescale Match                                            */
+  __IO uint32_t  TAR;                               /*!< GPTM Timer A                                                          */
+  __IO uint32_t  TBR;                               /*!< GPTM Timer B                                                          */
+  __IO uint32_t  TAV;                               /*!< GPTM Timer A Value                                                    */
+  __IO uint32_t  TBV;                               /*!< GPTM Timer B Value                                                    */
+  __IO uint32_t  RTCPD;                             /*!< GPTM RTC Predivide                                                    */
+  __IO uint32_t  TAPS;                              /*!< GPTM Timer A Prescale Snapshot                                        */
+  __IO uint32_t  TBPS;                              /*!< GPTM Timer B Prescale Snapshot                                        */
+  __IO uint32_t  TAPV;                              /*!< GPTM Timer A Prescale Value                                           */
+  __IO uint32_t  TBPV;                              /*!< GPTM Timer B Prescale Value                                           */
+  __I  uint32_t  RESERVED1[981];
+  __IO uint32_t  PP;                                /*!< GPTM Peripheral Properties                                            */
+} WTIMER0_Type;
 
 
 /* ================================================================================ */
@@ -566,35 +616,30 @@ typedef struct {                                    /*!< ADC0 Structure         
   __IO uint32_t  SSFSTAT0;                          /*!< ADC Sample Sequence FIFO 0 Status                                     */
   __IO uint32_t  SSOP0;                             /*!< ADC Sample Sequence 0 Operation                                       */
   __IO uint32_t  SSDC0;                             /*!< ADC Sample Sequence 0 Digital Comparator Select                       */
-  __IO uint32_t  SSEMUX0;                           /*!< ADC Sample Sequence Extended Input Multiplexer Select 0               */
-  __IO uint32_t  SSTSH0;                            /*!< ADC Sample Sequence 0 Sample and Hold Time                            */
+  __I  uint32_t  RESERVED2[2];
   __IO uint32_t  SSMUX1;                            /*!< ADC Sample Sequence Input Multiplexer Select 1                        */
   __IO uint32_t  SSCTL1;                            /*!< ADC Sample Sequence Control 1                                         */
   __IO uint32_t  SSFIFO1;                           /*!< ADC Sample Sequence Result FIFO 1                                     */
   __IO uint32_t  SSFSTAT1;                          /*!< ADC Sample Sequence FIFO 1 Status                                     */
   __IO uint32_t  SSOP1;                             /*!< ADC Sample Sequence 1 Operation                                       */
   __IO uint32_t  SSDC1;                             /*!< ADC Sample Sequence 1 Digital Comparator Select                       */
-  __IO uint32_t  SSEMUX1;                           /*!< ADC Sample Sequence Extended Input Multiplexer Select 1               */
-  __IO uint32_t  SSTSH1;                            /*!< ADC Sample Sequence 1 Sample and Hold Time                            */
+  __I  uint32_t  RESERVED3[2];
   __IO uint32_t  SSMUX2;                            /*!< ADC Sample Sequence Input Multiplexer Select 2                        */
   __IO uint32_t  SSCTL2;                            /*!< ADC Sample Sequence Control 2                                         */
   __IO uint32_t  SSFIFO2;                           /*!< ADC Sample Sequence Result FIFO 2                                     */
   __IO uint32_t  SSFSTAT2;                          /*!< ADC Sample Sequence FIFO 2 Status                                     */
   __IO uint32_t  SSOP2;                             /*!< ADC Sample Sequence 2 Operation                                       */
   __IO uint32_t  SSDC2;                             /*!< ADC Sample Sequence 2 Digital Comparator Select                       */
-  __IO uint32_t  SSEMUX2;                           /*!< ADC Sample Sequence Extended Input Multiplexer Select 2               */
-  __IO uint32_t  SSTSH2;                            /*!< ADC Sample Sequence 2 Sample and Hold Time                            */
+  __I  uint32_t  RESERVED4[2];
   __IO uint32_t  SSMUX3;                            /*!< ADC Sample Sequence Input Multiplexer Select 3                        */
   __IO uint32_t  SSCTL3;                            /*!< ADC Sample Sequence Control 3                                         */
   __IO uint32_t  SSFIFO3;                           /*!< ADC Sample Sequence Result FIFO 3                                     */
   __IO uint32_t  SSFSTAT3;                          /*!< ADC Sample Sequence FIFO 3 Status                                     */
   __IO uint32_t  SSOP3;                             /*!< ADC Sample Sequence 3 Operation                                       */
   __IO uint32_t  SSDC3;                             /*!< ADC Sample Sequence 3 Digital Comparator Select                       */
-  __IO uint32_t  SSEMUX3;                           /*!< ADC Sample Sequence Extended Input Multiplexer Select 3               */
-  __IO uint32_t  SSTSH3;                            /*!< ADC Sample Sequence 3 Sample and Hold Time                            */
-  __I  uint32_t  RESERVED2[784];
+  __I  uint32_t  RESERVED5[786];
   __O  uint32_t  DCRIC;                             /*!< ADC Digital Comparator Reset Initial Conditions                       */
-  __I  uint32_t  RESERVED3[63];
+  __I  uint32_t  RESERVED6[63];
   __IO uint32_t  DCCTL0;                            /*!< ADC Digital Comparator Control 0                                      */
   __IO uint32_t  DCCTL1;                            /*!< ADC Digital Comparator Control 1                                      */
   __IO uint32_t  DCCTL2;                            /*!< ADC Digital Comparator Control 2                                      */
@@ -603,7 +648,7 @@ typedef struct {                                    /*!< ADC0 Structure         
   __IO uint32_t  DCCTL5;                            /*!< ADC Digital Comparator Control 5                                      */
   __IO uint32_t  DCCTL6;                            /*!< ADC Digital Comparator Control 6                                      */
   __IO uint32_t  DCCTL7;                            /*!< ADC Digital Comparator Control 7                                      */
-  __I  uint32_t  RESERVED4[8];
+  __I  uint32_t  RESERVED7[8];
   __IO uint32_t  DCCMP0;                            /*!< ADC Digital Comparator Range 0                                        */
   __IO uint32_t  DCCMP1;                            /*!< ADC Digital Comparator Range 1                                        */
   __IO uint32_t  DCCMP2;                            /*!< ADC Digital Comparator Range 2                                        */
@@ -612,7 +657,7 @@ typedef struct {                                    /*!< ADC0 Structure         
   __IO uint32_t  DCCMP5;                            /*!< ADC Digital Comparator Range 5                                        */
   __IO uint32_t  DCCMP6;                            /*!< ADC Digital Comparator Range 6                                        */
   __IO uint32_t  DCCMP7;                            /*!< ADC Digital Comparator Range 7                                        */
-  __I  uint32_t  RESERVED5[88];
+  __I  uint32_t  RESERVED8[88];
   __IO uint32_t  PP;                                /*!< ADC Peripheral Properties                                             */
   __IO uint32_t  PC;                                /*!< ADC Peripheral Configuration                                          */
   __IO uint32_t  CC;                                /*!< ADC Clock Configuration                                               */
@@ -640,10 +685,7 @@ typedef struct {                                    /*!< COMP Structure         
   __I  uint32_t  RESERVED2[6];
   __IO uint32_t  ACSTAT1;                           /*!< Analog Comparator Status 1                                            */
   __IO uint32_t  ACCTL1;                            /*!< Analog Comparator Control 1                                           */
-  __I  uint32_t  RESERVED3[6];
-  __IO uint32_t  ACSTAT2;                           /*!< Analog Comparator Status 2                                            */
-  __IO uint32_t  ACCTL2;                            /*!< Analog Comparator Control 2                                           */
-  __I  uint32_t  RESERVED4[982];
+  __I  uint32_t  RESERVED3[990];
   __IO uint32_t  PP;                                /*!< Analog Comparator Peripheral Properties                               */
 } COMP_Type;
 
@@ -752,101 +794,94 @@ typedef struct {                                    /*!< USB0 Structure         
   __IO uint32_t  FIFO7;                             /*!< USB FIFO Endpoint 7                                                   */
   __I  uint32_t  RESERVED1[8];
   __IO uint8_t   DEVCTL;                            /*!< USB Device Control                                                    */
-  __IO uint8_t   CCONF;                             /*!< USB Common Configuration                                              */
+  __I  uint8_t   RESERVED2[1];
   __IO uint8_t   TXFIFOSZ;                          /*!< USB Transmit Dynamic FIFO Sizing                                      */
   __IO uint8_t   RXFIFOSZ;                          /*!< USB Receive Dynamic FIFO Sizing                                       */
   __IO uint16_t  TXFIFOADD;                         /*!< USB Transmit FIFO Start Address                                       */
   __IO uint16_t  RXFIFOADD;                         /*!< USB Receive FIFO Start Address                                        */
-  __I  uint32_t  RESERVED2[2];
-  __IO uint8_t   ULPIVBUSCTL;                       /*!< USB ULPI VBUS Control                                                 */
-  __I  uint8_t   RESERVED3[3];
-  __IO uint8_t   ULPIREGDATA;                       /*!< USB ULPI Register Data                                                */
-  __IO uint8_t   ULPIREGADDR;                       /*!< USB ULPI Register Address                                             */
-  __IO uint8_t   ULPIREGCTL;                        /*!< USB ULPI Register Control                                             */
-  __I  uint8_t   RESERVED4[1];
-  __IO uint8_t   EPINFO;                            /*!< USB Endpoint Information                                              */
-  __IO uint8_t   RAMINFO;                           /*!< USB RAM Information                                                   */
+  __I  uint32_t  RESERVED3[4];
+  __I  uint16_t  RESERVED4;
   __IO uint8_t   CONTIM;                            /*!< USB Connect Timing                                                    */
   __IO uint8_t   VPLEN;                             /*!< USB OTG VBUS Pulse Timing                                             */
-  __IO uint8_t   HSEOF;                             /*!< USB High-Speed Last Transaction to End of Frame Timing                */
+  __I  uint8_t   RESERVED5[1];
   __IO uint8_t   FSEOF;                             /*!< USB Full-Speed Last Transaction to End of Frame Timing                */
   __IO uint8_t   LSEOF;                             /*!< USB Low-Speed Last Transaction to End of Frame Timing                 */
-  __I  uint8_t   RESERVED5[1];
-  __IO uint8_t   TXFUNCADDR0;                       /*!< USB Transmit Functional Address Endpoint 0                            */
   __I  uint8_t   RESERVED6[1];
+  __IO uint8_t   TXFUNCADDR0;                       /*!< USB Transmit Functional Address Endpoint 0                            */
+  __I  uint8_t   RESERVED7[1];
   __IO uint8_t   TXHUBADDR0;                        /*!< USB Transmit Hub Address Endpoint 0                                   */
   __IO uint8_t   TXHUBPORT0;                        /*!< USB Transmit Hub Port Endpoint 0                                      */
-  __I  uint32_t  RESERVED7;
+  __I  uint32_t  RESERVED8;
   __IO uint8_t   TXFUNCADDR1;                       /*!< USB Transmit Functional Address Endpoint 1                            */
-  __I  uint8_t   RESERVED8[1];
+  __I  uint8_t   RESERVED9[1];
   __IO uint8_t   TXHUBADDR1;                        /*!< USB Transmit Hub Address Endpoint 1                                   */
   __IO uint8_t   TXHUBPORT1;                        /*!< USB Transmit Hub Port Endpoint 1                                      */
   __IO uint8_t   RXFUNCADDR1;                       /*!< USB Receive Functional Address Endpoint 1                             */
-  __I  uint8_t   RESERVED9[1];
+  __I  uint8_t   RESERVED10[1];
   __IO uint8_t   RXHUBADDR1;                        /*!< USB Receive Hub Address Endpoint 1                                    */
   __IO uint8_t   RXHUBPORT1;                        /*!< USB Receive Hub Port Endpoint 1                                       */
   __IO uint8_t   TXFUNCADDR2;                       /*!< USB Transmit Functional Address Endpoint 2                            */
-  __I  uint8_t   RESERVED10[1];
+  __I  uint8_t   RESERVED11[1];
   __IO uint8_t   TXHUBADDR2;                        /*!< USB Transmit Hub Address Endpoint 2                                   */
   __IO uint8_t   TXHUBPORT2;                        /*!< USB Transmit Hub Port Endpoint 2                                      */
   __IO uint8_t   RXFUNCADDR2;                       /*!< USB Receive Functional Address Endpoint 2                             */
-  __I  uint8_t   RESERVED11[1];
+  __I  uint8_t   RESERVED12[1];
   __IO uint8_t   RXHUBADDR2;                        /*!< USB Receive Hub Address Endpoint 2                                    */
   __IO uint8_t   RXHUBPORT2;                        /*!< USB Receive Hub Port Endpoint 2                                       */
   __IO uint8_t   TXFUNCADDR3;                       /*!< USB Transmit Functional Address Endpoint 3                            */
-  __I  uint8_t   RESERVED12[1];
+  __I  uint8_t   RESERVED13[1];
   __IO uint8_t   TXHUBADDR3;                        /*!< USB Transmit Hub Address Endpoint 3                                   */
   __IO uint8_t   TXHUBPORT3;                        /*!< USB Transmit Hub Port Endpoint 3                                      */
   __IO uint8_t   RXFUNCADDR3;                       /*!< USB Receive Functional Address Endpoint 3                             */
-  __I  uint8_t   RESERVED13[1];
+  __I  uint8_t   RESERVED14[1];
   __IO uint8_t   RXHUBADDR3;                        /*!< USB Receive Hub Address Endpoint 3                                    */
   __IO uint8_t   RXHUBPORT3;                        /*!< USB Receive Hub Port Endpoint 3                                       */
   __IO uint8_t   TXFUNCADDR4;                       /*!< USB Transmit Functional Address Endpoint 4                            */
-  __I  uint8_t   RESERVED14[1];
+  __I  uint8_t   RESERVED15[1];
   __IO uint8_t   TXHUBADDR4;                        /*!< USB Transmit Hub Address Endpoint 4                                   */
   __IO uint8_t   TXHUBPORT4;                        /*!< USB Transmit Hub Port Endpoint 4                                      */
   __IO uint8_t   RXFUNCADDR4;                       /*!< USB Receive Functional Address Endpoint 4                             */
-  __I  uint8_t   RESERVED15[1];
+  __I  uint8_t   RESERVED16[1];
   __IO uint8_t   RXHUBADDR4;                        /*!< USB Receive Hub Address Endpoint 4                                    */
   __IO uint8_t   RXHUBPORT4;                        /*!< USB Receive Hub Port Endpoint 4                                       */
   __IO uint8_t   TXFUNCADDR5;                       /*!< USB Transmit Functional Address Endpoint 5                            */
-  __I  uint8_t   RESERVED16[1];
+  __I  uint8_t   RESERVED17[1];
   __IO uint8_t   TXHUBADDR5;                        /*!< USB Transmit Hub Address Endpoint 5                                   */
   __IO uint8_t   TXHUBPORT5;                        /*!< USB Transmit Hub Port Endpoint 5                                      */
   __IO uint8_t   RXFUNCADDR5;                       /*!< USB Receive Functional Address Endpoint 5                             */
-  __I  uint8_t   RESERVED17[1];
+  __I  uint8_t   RESERVED18[1];
   __IO uint8_t   RXHUBADDR5;                        /*!< USB Receive Hub Address Endpoint 5                                    */
   __IO uint8_t   RXHUBPORT5;                        /*!< USB Receive Hub Port Endpoint 5                                       */
   __IO uint8_t   TXFUNCADDR6;                       /*!< USB Transmit Functional Address Endpoint 6                            */
-  __I  uint8_t   RESERVED18[1];
+  __I  uint8_t   RESERVED19[1];
   __IO uint8_t   TXHUBADDR6;                        /*!< USB Transmit Hub Address Endpoint 6                                   */
   __IO uint8_t   TXHUBPORT6;                        /*!< USB Transmit Hub Port Endpoint 6                                      */
   __IO uint8_t   RXFUNCADDR6;                       /*!< USB Receive Functional Address Endpoint 6                             */
-  __I  uint8_t   RESERVED19[1];
+  __I  uint8_t   RESERVED20[1];
   __IO uint8_t   RXHUBADDR6;                        /*!< USB Receive Hub Address Endpoint 6                                    */
   __IO uint8_t   RXHUBPORT6;                        /*!< USB Receive Hub Port Endpoint 6                                       */
   __IO uint8_t   TXFUNCADDR7;                       /*!< USB Transmit Functional Address Endpoint 7                            */
-  __I  uint8_t   RESERVED20[1];
+  __I  uint8_t   RESERVED21[1];
   __IO uint8_t   TXHUBADDR7;                        /*!< USB Transmit Hub Address Endpoint 7                                   */
   __IO uint8_t   TXHUBPORT7;                        /*!< USB Transmit Hub Port Endpoint 7                                      */
   __IO uint8_t   RXFUNCADDR7;                       /*!< USB Receive Functional Address Endpoint 7                             */
-  __I  uint8_t   RESERVED21[1];
+  __I  uint8_t   RESERVED22[1];
   __IO uint8_t   RXHUBADDR7;                        /*!< USB Receive Hub Address Endpoint 7                                    */
   __IO uint8_t   RXHUBPORT7;                        /*!< USB Receive Hub Port Endpoint 7                                       */
-  __I  uint32_t  RESERVED22[16];
-  __I  uint16_t  RESERVED23;
+  __I  uint32_t  RESERVED23[16];
+  __I  uint16_t  RESERVED24;
   
   union {
     __O  uint8_t   CSRL0_USB0_ALT;                  /*!< USB Control and Status Endpoint 0 Low                                 */
     __O  uint8_t   CSRL0;                           /*!< USB Control and Status Endpoint 0 Low                                 */
   };
   __O  uint8_t   CSRH0;                             /*!< USB Control and Status Endpoint 0 High                                */
-  __I  uint16_t  RESERVED24[3];
+  __I  uint16_t  RESERVED25[3];
   __IO uint8_t   COUNT0;                            /*!< USB Receive Byte Count Endpoint 0                                     */
-  __I  uint8_t   RESERVED25[1];
+  __I  uint8_t   RESERVED26[1];
   __IO uint8_t   TYPE0;                             /*!< USB Type Endpoint 0                                                   */
   __IO uint8_t   NAKLMT;                            /*!< USB NAK Limit                                                         */
-  __I  uint32_t  RESERVED26;
+  __I  uint32_t  RESERVED27;
   __IO uint16_t  TXMAXP1;                           /*!< USB Maximum Transmit Data Endpoint 1                                  */
   
   union {
@@ -878,7 +913,7 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL1_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 1                          */
     __IO uint8_t   RXINTERVAL1;                     /*!< USB Host Receive Polling Interval Endpoint 1                          */
   };
-  __I  uint16_t  RESERVED27;
+  __I  uint16_t  RESERVED28;
   __IO uint16_t  TXMAXP2;                           /*!< USB Maximum Transmit Data Endpoint 2                                  */
   
   union {
@@ -910,7 +945,7 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL2_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 2                          */
     __IO uint8_t   RXINTERVAL2;                     /*!< USB Host Receive Polling Interval Endpoint 2                          */
   };
-  __I  uint16_t  RESERVED28;
+  __I  uint16_t  RESERVED29;
   __IO uint16_t  TXMAXP3;                           /*!< USB Maximum Transmit Data Endpoint 3                                  */
   
   union {
@@ -942,7 +977,7 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL3_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 3                          */
     __IO uint8_t   RXINTERVAL3;                     /*!< USB Host Receive Polling Interval Endpoint 3                          */
   };
-  __I  uint16_t  RESERVED29;
+  __I  uint16_t  RESERVED30;
   __IO uint16_t  TXMAXP4;                           /*!< USB Maximum Transmit Data Endpoint 4                                  */
   
   union {
@@ -974,7 +1009,7 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL4_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 4                          */
     __IO uint8_t   RXINTERVAL4;                     /*!< USB Host Receive Polling Interval Endpoint 4                          */
   };
-  __I  uint16_t  RESERVED30;
+  __I  uint16_t  RESERVED31;
   __IO uint16_t  TXMAXP5;                           /*!< USB Maximum Transmit Data Endpoint 5                                  */
   
   union {
@@ -1006,7 +1041,7 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL5_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 5                          */
     __IO uint8_t   RXINTERVAL5;                     /*!< USB Host Receive Polling Interval Endpoint 5                          */
   };
-  __I  uint16_t  RESERVED31;
+  __I  uint16_t  RESERVED32;
   __IO uint16_t  TXMAXP6;                           /*!< USB Maximum Transmit Data Endpoint 6                                  */
   
   union {
@@ -1038,7 +1073,7 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL6_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 6                          */
     __IO uint8_t   RXINTERVAL6;                     /*!< USB Host Receive Polling Interval Endpoint 6                          */
   };
-  __I  uint16_t  RESERVED32;
+  __I  uint16_t  RESERVED33;
   __IO uint16_t  TXMAXP7;                           /*!< USB Maximum Transmit Data Endpoint 7                                  */
   
   union {
@@ -1070,75 +1105,24 @@ typedef struct {                                    /*!< USB0 Structure         
     __IO uint8_t   RXINTERVAL7_USB0_ALT;            /*!< USB Host Receive Polling Interval Endpoint 7                          */
     __IO uint8_t   RXINTERVAL7;                     /*!< USB Host Receive Polling Interval Endpoint 7                          */
   };
-  __I  uint16_t  RESERVED33[65];
-  __IO uint8_t   DMAINTR;                           /*!< USB DMA Interrupt                                                     */
-  __I  uint8_t   RESERVED34[3];
-  __IO uint16_t  DMACTL0;                           /*!< USB DMA Control 0                                                     */
-  __I  uint16_t  RESERVED35;
-  __IO uint32_t  DMAADDR0;                          /*!< USB DMA Address 0                                                     */
-  __IO uint32_t  DMACOUNT0;                         /*!< USB DMA Count 0                                                       */
-  __I  uint32_t  RESERVED36;
-  __IO uint16_t  DMACTL1;                           /*!< USB DMA Control 1                                                     */
-  __I  uint16_t  RESERVED37;
-  __IO uint32_t  DMAADDR1;                          /*!< USB DMA Address 1                                                     */
-  __IO uint32_t  DMACOUNT1;                         /*!< USB DMA Count 1                                                       */
-  __I  uint32_t  RESERVED38;
-  __IO uint16_t  DMACTL2;                           /*!< USB DMA Control 2                                                     */
-  __I  uint16_t  RESERVED39;
-  __IO uint32_t  DMAADDR2;                          /*!< USB DMA Address 2                                                     */
-  __IO uint32_t  DMACOUNT2;                         /*!< USB DMA Count 2                                                       */
-  __I  uint32_t  RESERVED40;
-  __IO uint16_t  DMACTL3;                           /*!< USB DMA Control 3                                                     */
-  __I  uint16_t  RESERVED41;
-  __IO uint32_t  DMAADDR3;                          /*!< USB DMA Address 3                                                     */
-  __IO uint32_t  DMACOUNT3;                         /*!< USB DMA Count 3                                                       */
-  __I  uint32_t  RESERVED42;
-  __IO uint16_t  DMACTL4;                           /*!< USB DMA Control 4                                                     */
-  __I  uint16_t  RESERVED43;
-  __IO uint32_t  DMAADDR4;                          /*!< USB DMA Address 4                                                     */
-  __IO uint32_t  DMACOUNT4;                         /*!< USB DMA Count 4                                                       */
-  __I  uint32_t  RESERVED44;
-  __IO uint16_t  DMACTL5;                           /*!< USB DMA Control 5                                                     */
-  __I  uint16_t  RESERVED45;
-  __IO uint32_t  DMAADDR5;                          /*!< USB DMA Address 5                                                     */
-  __IO uint32_t  DMACOUNT5;                         /*!< USB DMA Count 5                                                       */
-  __I  uint32_t  RESERVED46;
-  __IO uint16_t  DMACTL6;                           /*!< USB DMA Control 6                                                     */
-  __I  uint16_t  RESERVED47;
-  __IO uint32_t  DMAADDR6;                          /*!< USB DMA Address 6                                                     */
-  __IO uint32_t  DMACOUNT6;                         /*!< USB DMA Count 6                                                       */
-  __I  uint32_t  RESERVED48;
-  __IO uint16_t  DMACTL7;                           /*!< USB DMA Control 7                                                     */
-  __I  uint16_t  RESERVED49;
-  __IO uint32_t  DMAADDR7;                          /*!< USB DMA Address 7                                                     */
-  __IO uint32_t  DMACOUNT7;                         /*!< USB DMA Count 7                                                       */
-  __I  uint32_t  RESERVED50[33];
+  __I  uint16_t  RESERVED34[195];
   __IO uint16_t  RQPKTCOUNT1;                       /*!< USB Request Packet Count in Block Transfer Endpoint 1                 */
-  __I  uint16_t  RESERVED51;
+  __I  uint16_t  RESERVED35;
   __IO uint16_t  RQPKTCOUNT2;                       /*!< USB Request Packet Count in Block Transfer Endpoint 2                 */
-  __I  uint16_t  RESERVED52;
+  __I  uint16_t  RESERVED36;
   __IO uint16_t  RQPKTCOUNT3;                       /*!< USB Request Packet Count in Block Transfer Endpoint 3                 */
-  __I  uint16_t  RESERVED53;
+  __I  uint16_t  RESERVED37;
   __IO uint16_t  RQPKTCOUNT4;                       /*!< USB Request Packet Count in Block Transfer Endpoint 4                 */
-  __I  uint16_t  RESERVED54;
+  __I  uint16_t  RESERVED38;
   __IO uint16_t  RQPKTCOUNT5;                       /*!< USB Request Packet Count in Block Transfer Endpoint 5                 */
-  __I  uint16_t  RESERVED55;
+  __I  uint16_t  RESERVED39;
   __IO uint16_t  RQPKTCOUNT6;                       /*!< USB Request Packet Count in Block Transfer Endpoint 6                 */
-  __I  uint16_t  RESERVED56;
+  __I  uint16_t  RESERVED40;
   __IO uint16_t  RQPKTCOUNT7;                       /*!< USB Request Packet Count in Block Transfer Endpoint 7                 */
-  __I  uint16_t  RESERVED57[17];
+  __I  uint16_t  RESERVED41[17];
   __IO uint16_t  RXDPKTBUFDIS;                      /*!< USB Receive Double Packet Buffer Disable                              */
   __IO uint16_t  TXDPKTBUFDIS;                      /*!< USB Transmit Double Packet Buffer Disable                             */
-  __IO uint16_t  CTO;                               /*!< USB Chirp Timeout                                                     */
-  __IO uint16_t  HHSRTN;                            /*!< USB High Speed to UTM Operating Delay                                 */
-  __IO uint16_t  HSBT;                              /*!< USB High Speed Time-out Adder                                         */
-  __I  uint16_t  RESERVED58[11];
-  __IO uint16_t  LPMATTR;                           /*!< USB LPM Attributes                                                    */
-  __IO uint8_t   LPMCNTRL;                          /*!< USB LPM Control                                                       */
-  __IO uint8_t   LPMIM;                             /*!< USB LPM Interrupt Mask                                                */
-  __IO uint8_t   LPMRIS;                            /*!< USB LPM Raw Interrupt Status                                          */
-  __IO uint8_t   LPMFADDR;                          /*!< USB LPM Function Address                                              */
-  __I  uint16_t  RESERVED59[77];
+  __I  uint32_t  RESERVED42[47];
   __IO uint32_t  EPC;                               /*!< USB External Power Control                                            */
   __IO uint32_t  EPCRIS;                            /*!< USB External Power Control Raw Interrupt Status                       */
   __IO uint32_t  EPCIM;                             /*!< USB External Power Control Interrupt Mask                             */
@@ -1147,63 +1131,19 @@ typedef struct {                                    /*!< USB0 Structure         
   __IO uint32_t  DRIM;                              /*!< USB Device RESUME Interrupt Mask                                      */
   __O  uint32_t  DRISC;                             /*!< USB Device RESUME Interrupt Status and Clear                          */
   __IO uint32_t  GPCS;                              /*!< USB General-Purpose Control and Status                                */
-  __I  uint32_t  RESERVED60[4];
+  __I  uint32_t  RESERVED43[4];
   __IO uint32_t  VDC;                               /*!< USB VBUS Droop Control                                                */
   __IO uint32_t  VDCRIS;                            /*!< USB VBUS Droop Control Raw Interrupt Status                           */
   __IO uint32_t  VDCIM;                             /*!< USB VBUS Droop Control Interrupt Mask                                 */
   __IO uint32_t  VDCISC;                            /*!< USB VBUS Droop Control Interrupt Status and Clear                     */
-  __I  uint32_t  RESERVED61[736];
+  __I  uint32_t  RESERVED44;
+  __IO uint32_t  IDVRIS;                            /*!< USB ID Valid Detect Raw Interrupt Status                              */
+  __IO uint32_t  IDVIM;                             /*!< USB ID Valid Detect Interrupt Mask                                    */
+  __IO uint32_t  IDVISC;                            /*!< USB ID Valid Detect Interrupt Status and Clear                        */
+  __IO uint32_t  DMASEL;                            /*!< USB DMA Select                                                        */
+  __I  uint32_t  RESERVED45[731];
   __IO uint32_t  PP;                                /*!< USB Peripheral Properties                                             */
-  __IO uint32_t  PC;                                /*!< USB Peripheral Configuration                                          */
-  __IO uint32_t  CC;                                /*!< USB Clock Configuration                                               */
 } USB0_Type;
-
-
-/* ================================================================================ */
-/* ================                    GPIOA_AHB                   ================ */
-/* ================================================================================ */
-
-
-/**
-  * @brief Register map for GPIOA_AHB peripheral (GPIOA_AHB)
-  */
-
-typedef struct {                                    /*!< GPIOA_AHB Structure                                                   */
-  __I  uint32_t  RESERVED0[255];
-  __IO uint32_t  DATA;                              /*!< GPIO Data                                                             */
-  __IO uint32_t  DIR;                               /*!< GPIO Direction                                                        */
-  __IO uint32_t  IS;                                /*!< GPIO Interrupt Sense                                                  */
-  __IO uint32_t  IBE;                               /*!< GPIO Interrupt Both Edges                                             */
-  __IO uint32_t  IEV;                               /*!< GPIO Interrupt Event                                                  */
-  __IO uint32_t  IM;                                /*!< GPIO Interrupt Mask                                                   */
-  __IO uint32_t  RIS;                               /*!< GPIO Raw Interrupt Status                                             */
-  __IO uint32_t  MIS;                               /*!< GPIO Masked Interrupt Status                                          */
-  __O  uint32_t  ICR;                               /*!< GPIO Interrupt Clear                                                  */
-  __IO uint32_t  AFSEL;                             /*!< GPIO Alternate Function Select                                        */
-  __I  uint32_t  RESERVED1[55];
-  __IO uint32_t  DR2R;                              /*!< GPIO 2-mA Drive Select                                                */
-  __IO uint32_t  DR4R;                              /*!< GPIO 4-mA Drive Select                                                */
-  __IO uint32_t  DR8R;                              /*!< GPIO 8-mA Drive Select                                                */
-  __IO uint32_t  ODR;                               /*!< GPIO Open Drain Select                                                */
-  __IO uint32_t  PUR;                               /*!< GPIO Pull-Up Select                                                   */
-  __IO uint32_t  PDR;                               /*!< GPIO Pull-Down Select                                                 */
-  __IO uint32_t  SLR;                               /*!< GPIO Slew Rate Control Select                                         */
-  __IO uint32_t  DEN;                               /*!< GPIO Digital Enable                                                   */
-  __IO uint32_t  LOCK;                              /*!< GPIO Lock                                                             */
-  __I  uint32_t  CR;                                /*!< GPIO Commit                                                           */
-  __IO uint32_t  AMSEL;                             /*!< GPIO Analog Mode Select                                               */
-  __IO uint32_t  PCTL;                              /*!< GPIO Port Control                                                     */
-  __IO uint32_t  ADCCTL;                            /*!< GPIO ADC Control                                                      */
-  __IO uint32_t  DMACTL;                            /*!< GPIO DMA Control                                                      */
-  __IO uint32_t  SI;                                /*!< GPIO Select Interrupt                                                 */
-  __IO uint32_t  DR12R;                             /*!< GPIO 12-mA Drive Select                                               */
-  __IO uint32_t  WAKEPEN;                           /*!< GPIO Wake Pin Enable                                                  */
-  __IO uint32_t  WAKELVL;                           /*!< GPIO Wake Level                                                       */
-  __IO uint32_t  WAKESTAT;                          /*!< GPIO Wake Status                                                      */
-  __I  uint32_t  RESERVED2[669];
-  __IO uint32_t  PP;                                /*!< GPIO Peripheral Property                                              */
-  __IO uint32_t  PC;                                /*!< GPIO Peripheral Configuration                                         */
-} GPIOA_AHB_Type;
 
 
 /* ================================================================================ */
@@ -1232,205 +1172,12 @@ typedef struct {                                    /*!< EEPROM Structure       
   __IO uint32_t  EEPASS2;                           /*!< EEPROM Password                                                       */
   __IO uint32_t  EEINT;                             /*!< EEPROM Interrupt                                                      */
   __I  uint32_t  RESERVED2[3];
-  __IO uint32_t  EEHIDE0;                           /*!< EEPROM Block Hide 0                                                   */
-  __IO uint32_t  EEHIDE1;                           /*!< EEPROM Block Hide 1                                                   */
-  __IO uint32_t  EEHIDE2;                           /*!< EEPROM Block Hide 2                                                   */
-  __I  uint32_t  RESERVED3[9];
+  __IO uint32_t  EEHIDE;                            /*!< EEPROM Block Hide                                                     */
+  __I  uint32_t  RESERVED3[11];
   __IO uint32_t  EEDBGME;                           /*!< EEPROM Debug Mass Erase                                               */
   __I  uint32_t  RESERVED4[975];
   __IO uint32_t  PP;                                /*!< EEPROM Peripheral Properties                                          */
 } EEPROM_Type;
-
-
-/* ================================================================================ */
-/* ================                      EPI0                      ================ */
-/* ================================================================================ */
-
-
-/**
-  * @brief Register map for EPI0 peripheral (EPI0)
-  */
-
-typedef struct {                                    /*!< EPI0 Structure                                                        */
-  __IO uint32_t  CFG;                               /*!< EPI Configuration                                                     */
-  __IO uint32_t  BAUD;                              /*!< EPI Main Baud Rate                                                    */
-  __IO uint32_t  BAUD2;                             /*!< EPI Main Baud Rate                                                    */
-  __I  uint32_t  RESERVED0;
-  
-  union {
-    __IO uint32_t  SDRAMCFG_EPI_ALTSD;              /*!< EPI SDRAM Configuration                                               */
-    __IO uint32_t  HB8CFG_EPI_ALT8;                 /*!< EPI Host-Bus 8 Configuration                                          */
-    __IO uint32_t  HB16CFG_EPI_ALT16;               /*!< EPI Host-Bus 16 Configuration                                         */
-    __IO uint32_t  GPCFG;                           /*!< EPI General-Purpose Configuration                                     */
-  };
-  
-  union {
-    __IO uint32_t  HB16CFG2_EPI_ALT16;              /*!< EPI Host-Bus 16 Configuration 2                                       */
-    __IO uint32_t  HB8CFG2_EPI_ALT8;                /*!< EPI Host-Bus 8 Configuration 2                                        */
-  };
-  __I  uint32_t  RESERVED1;
-  __IO uint32_t  ADDRMAP;                           /*!< EPI Address Map                                                       */
-  __IO uint32_t  RSIZE0;                            /*!< EPI Read Size 0                                                       */
-  __IO uint32_t  RADDR0;                            /*!< EPI Read Address 0                                                    */
-  __IO uint32_t  RPSTD0;                            /*!< EPI Non-Blocking Read Data 0                                          */
-  __I  uint32_t  RESERVED2;
-  __IO uint32_t  RSIZE1;                            /*!< EPI Read Size 1                                                       */
-  __IO uint32_t  RADDR1;                            /*!< EPI Read Address 1                                                    */
-  __IO uint32_t  RPSTD1;                            /*!< EPI Non-Blocking Read Data 1                                          */
-  __I  uint32_t  RESERVED3[9];
-  __IO uint32_t  STAT;                              /*!< EPI Status                                                            */
-  __I  uint32_t  RESERVED4[2];
-  __IO uint32_t  RFIFOCNT;                          /*!< EPI Read FIFO Count                                                   */
-  __IO uint32_t  READFIFO0;                         /*!< EPI Read FIFO                                                         */
-  __IO uint32_t  READFIFO1;                         /*!< EPI Read FIFO Alias 1                                                 */
-  __IO uint32_t  READFIFO2;                         /*!< EPI Read FIFO Alias 2                                                 */
-  __IO uint32_t  READFIFO3;                         /*!< EPI Read FIFO Alias 3                                                 */
-  __IO uint32_t  READFIFO4;                         /*!< EPI Read FIFO Alias 4                                                 */
-  __IO uint32_t  READFIFO5;                         /*!< EPI Read FIFO Alias 5                                                 */
-  __IO uint32_t  READFIFO6;                         /*!< EPI Read FIFO Alias 6                                                 */
-  __IO uint32_t  READFIFO7;                         /*!< EPI Read FIFO Alias 7                                                 */
-  __I  uint32_t  RESERVED5[92];
-  __IO uint32_t  FIFOLVL;                           /*!< EPI FIFO Level Selects                                                */
-  __IO uint32_t  WFIFOCNT;                          /*!< EPI Write FIFO Count                                                  */
-  __IO uint32_t  DMATXCNT;                          /*!< EPI DMA Transmit Count                                                */
-  __I  uint32_t  RESERVED6;
-  __IO uint32_t  IM;                                /*!< EPI Interrupt Mask                                                    */
-  __IO uint32_t  RIS;                               /*!< EPI Raw Interrupt Status                                              */
-  __IO uint32_t  MIS;                               /*!< EPI Masked Interrupt Status                                           */
-  __IO uint32_t  EISC;                              /*!< EPI Error and Interrupt Status and Clear                              */
-  __I  uint32_t  RESERVED7[58];
-  
-  union {
-    __IO uint32_t  HB16CFG3_EPI_ALT16;              /*!< EPI Host-Bus 16 Configuration 3                                       */
-    __IO uint32_t  HB8CFG3;                         /*!< EPI Host-Bus 8 Configuration 3                                        */
-  };
-  
-  union {
-    __IO uint32_t  HB8CFG4_EPI_ALT8;                /*!< EPI Host-Bus 8 Configuration 4                                        */
-    __IO uint32_t  HB16CFG4;                        /*!< EPI Host-Bus 16 Configuration 4                                       */
-  };
-  
-  union {
-    __IO uint32_t  HB16TIME_EPI_ALT16;              /*!< EPI Host-Bus 16 Timing Extension                                      */
-    __IO uint32_t  HB8TIME;                         /*!< EPI Host-Bus 8 Timing Extension                                       */
-  };
-  
-  union {
-    __IO uint32_t  HB16TIME2_EPI_ALT16;             /*!< EPI Host-Bus 16 Timing Extension                                      */
-    __IO uint32_t  HB8TIME2;                        /*!< EPI Host-Bus 8 Timing Extension                                       */
-  };
-  
-  union {
-    __IO uint32_t  HB8TIME3_EPI_ALT8;               /*!< EPI Host-Bus 8 Timing Extension                                       */
-    __IO uint32_t  HB16TIME3;                       /*!< EPI Host-Bus 16 Timing Extension                                      */
-  };
-  
-  union {
-    __IO uint32_t  HB16TIME4;                       /*!< EPI Host-Bus 16 Timing Extension                                      */
-    __IO uint32_t  HB8TIME4_EPI_ALT8;               /*!< EPI Host-Bus 8 Timing Extension                                       */
-  };
-  __I  uint32_t  RESERVED8[16];
-  __IO uint32_t  HBPSRAM;                           /*!< EPI Host-Bus PSRAM                                                    */
-} EPI0_Type;
-
-
-/* ================================================================================ */
-/* ================                      EMAC0                     ================ */
-/* ================================================================================ */
-
-
-/**
-  * @brief Register map for EMAC0 peripheral (EMAC0)
-  */
-
-typedef struct {                                    /*!< EMAC0 Structure                                                       */
-  __IO uint32_t  CFG;                               /*!< Ethernet MAC Configuration                                            */
-  __IO uint32_t  FRAMEFLTR;                         /*!< Ethernet MAC Frame Filter                                             */
-  __IO uint32_t  HASHTBLH;                          /*!< Ethernet MAC Hash Table High                                          */
-  __IO uint32_t  HASHTBLL;                          /*!< Ethernet MAC Hash Table Low                                           */
-  __IO uint32_t  MIIADDR;                           /*!< Ethernet MAC MII Address                                              */
-  __IO uint32_t  MIIDATA;                           /*!< Ethernet MAC MII Data Register                                        */
-  __IO uint32_t  FLOWCTL;                           /*!< Ethernet MAC Flow Control                                             */
-  __IO uint32_t  VLANTG;                            /*!< Ethernet MAC VLAN Tag                                                 */
-  __I  uint32_t  RESERVED0;
-  __IO uint32_t  STATUS;                            /*!< Ethernet MAC Status                                                   */
-  __IO uint32_t  RWUFF;                             /*!< Ethernet MAC Remote Wake-Up Frame Filter                              */
-  __IO uint32_t  PMTCTLSTAT;                        /*!< Ethernet MAC PMT Control and Status Register                          */
-  __I  uint32_t  RESERVED1[2];
-  __IO uint32_t  RIS;                               /*!< Ethernet MAC Raw Interrupt Status                                     */
-  __IO uint32_t  IM;                                /*!< Ethernet MAC Interrupt Mask                                           */
-  __IO uint32_t  ADDR0H;                            /*!< Ethernet MAC Address 0 High                                           */
-  __IO uint32_t  ADDR0L;                            /*!< Ethernet MAC Address 0 Low Register                                   */
-  __IO uint32_t  ADDR1H;                            /*!< Ethernet MAC Address 1 High                                           */
-  __IO uint32_t  ADDR1L;                            /*!< Ethernet MAC Address 1 Low                                            */
-  __IO uint32_t  ADDR2H;                            /*!< Ethernet MAC Address 2 High                                           */
-  __IO uint32_t  ADDR2L;                            /*!< Ethernet MAC Address 2 Low                                            */
-  __IO uint32_t  ADDR3H;                            /*!< Ethernet MAC Address 3 High                                           */
-  __IO uint32_t  ADDR3L;                            /*!< Ethernet MAC Address 3 Low                                            */
-  __I  uint32_t  RESERVED2[31];
-  __IO uint32_t  WDOGTO;                            /*!< Ethernet MAC Watchdog Timeout                                         */
-  __I  uint32_t  RESERVED3[8];
-  __IO uint32_t  MMCCTRL;                           /*!< Ethernet MAC MMC Control                                              */
-  __IO uint32_t  MMCRXRIS;                          /*!< Ethernet MAC MMC Receive Raw Interrupt Status                         */
-  __IO uint32_t  MMCTXRIS;                          /*!< Ethernet MAC MMC Transmit Raw Interrupt Status                        */
-  __IO uint32_t  MMCRXIM;                           /*!< Ethernet MAC MMC Receive Interrupt Mask                               */
-  __IO uint32_t  MMCTXIM;                           /*!< Ethernet MAC MMC Transmit Interrupt Mask                              */
-  __I  uint32_t  RESERVED4;
-  __IO uint32_t  TXCNTGB;                           /*!< Ethernet MAC Transmit Frame Count for Good and Bad Frames             */
-  __I  uint32_t  RESERVED5[12];
-  __IO uint32_t  TXCNTSCOL;                         /*!< Ethernet MAC Transmit Frame Count for Frames Transmitted after
-                                                         Single Collision                                                      */
-  __IO uint32_t  TXCNTMCOL;                         /*!< Ethernet MAC Transmit Frame Count for Frames Transmitted after
-                                                         Multiple Collisions                                                   */
-  __I  uint32_t  RESERVED6[4];
-  __IO uint32_t  TXOCTCNTG;                         /*!< Ethernet MAC Transmit Octet Count Good                                */
-  __I  uint32_t  RESERVED7[6];
-  __IO uint32_t  RXCNTGB;                           /*!< Ethernet MAC Receive Frame Count for Good and Bad Frames              */
-  __I  uint32_t  RESERVED8[4];
-  __IO uint32_t  RXCNTCRCERR;                       /*!< Ethernet MAC Receive Frame Count for CRC Error Frames                 */
-  __IO uint32_t  RXCNTALGNERR;                      /*!< Ethernet MAC Receive Frame Count for Alignment Error Frames           */
-  __I  uint32_t  RESERVED9[10];
-  __IO uint32_t  RXCNTGUNI;                         /*!< Ethernet MAC Receive Frame Count for Good Unicast Frames              */
-  __I  uint32_t  RESERVED10[239];
-  __IO uint32_t  VLNINCREP;                         /*!< Ethernet MAC VLAN Tag Inclusion or Replacement                        */
-  __IO uint32_t  VLANHASH;                          /*!< Ethernet MAC VLAN Hash Table                                          */
-  __I  uint32_t  RESERVED11[93];
-  __IO uint32_t  TIMSTCTRL;                         /*!< Ethernet MAC Timestamp Control                                        */
-  __IO uint32_t  SUBSECINC;                         /*!< Ethernet MAC Sub-Second Increment                                     */
-  __IO uint32_t  TIMSEC;                            /*!< Ethernet MAC System Time - Seconds                                    */
-  __IO uint32_t  TIMNANO;                           /*!< Ethernet MAC System Time - Nanoseconds                                */
-  __IO uint32_t  TIMSECU;                           /*!< Ethernet MAC System Time - Seconds Update                             */
-  __IO uint32_t  TIMNANOU;                          /*!< Ethernet MAC System Time - Nanoseconds Update                         */
-  __IO uint32_t  TIMADD;                            /*!< Ethernet MAC Timestamp Addend                                         */
-  __IO uint32_t  TARGSEC;                           /*!< Ethernet MAC Target Time Seconds                                      */
-  __IO uint32_t  TARGNANO;                          /*!< Ethernet MAC Target Time Nanoseconds                                  */
-  __IO uint32_t  HWORDSEC;                          /*!< Ethernet MAC System Time-Higher Word Seconds                          */
-  __IO uint32_t  TIMSTAT;                           /*!< Ethernet MAC Timestamp Status                                         */
-  __IO uint32_t  PPSCTRL;                           /*!< Ethernet MAC PPS Control                                              */
-  __I  uint32_t  RESERVED12[12];
-  __IO uint32_t  PPS0INTVL;                         /*!< Ethernet MAC PPS0 Interval                                            */
-  __IO uint32_t  PPS0WIDTH;                         /*!< Ethernet MAC PPS0 Width                                               */
-  __I  uint32_t  RESERVED13[294];
-  __IO uint32_t  DMABUSMOD;                         /*!< Ethernet MAC DMA Bus Mode                                             */
-  __O  uint32_t  TXPOLLD;                           /*!< Ethernet MAC Transmit Poll Demand                                     */
-  __O  uint32_t  RXPOLLD;                           /*!< Ethernet MAC Receive Poll Demand                                      */
-  __IO uint32_t  RXDLADDR;                          /*!< Ethernet MAC Receive Descriptor List Address                          */
-  __IO uint32_t  TXDLADDR;                          /*!< Ethernet MAC Transmit Descriptor List Address                         */
-  __IO uint32_t  DMARIS;                            /*!< Ethernet MAC DMA Interrupt Status                                     */
-  __IO uint32_t  DMAOPMODE;                         /*!< Ethernet MAC DMA Operation Mode                                       */
-  __IO uint32_t  DMAIM;                             /*!< Ethernet MAC DMA Interrupt Mask Register                              */
-  __IO uint32_t  MFBOC;                             /*!< Ethernet MAC Missed Frame and Buffer Overflow Counter                 */
-  __IO uint32_t  RXINTWDT;                          /*!< Ethernet MAC Receive Interrupt Watchdog Timer                         */
-  __I  uint32_t  RESERVED14[8];
-  __IO uint32_t  HOSTXDESC;                         /*!< Ethernet MAC Current Host Transmit Descriptor                         */
-  __IO uint32_t  HOSRXDESC;                         /*!< Ethernet MAC Current Host Receive Descriptor                          */
-  __IO uint32_t  HOSTXBA;                           /*!< Ethernet MAC Current Host Transmit Buffer Address                     */
-  __IO uint32_t  HOSRXBA;                           /*!< Ethernet MAC Current Host Receive Buffer Address                      */
-  __I  uint32_t  RESERVED15[218];
-  __IO uint32_t  PP;                                /*!< Ethernet MAC Peripheral Property Register                             */
-  __IO uint32_t  PC;                                /*!< Ethernet MAC Peripheral Configuration Register                        */
-  __IO uint32_t  CC;                                /*!< Ethernet MAC Clock Configuration Register                             */
-} EMAC0_Type;
 
 
 /* ================================================================================ */
@@ -1471,39 +1218,8 @@ typedef struct {                                    /*!< HIB Structure          
   __IO uint32_t  IC;                                /*!< Hibernation Interrupt Clear                                           */
   __IO uint32_t  RTCT;                              /*!< Hibernation RTC Trim                                                  */
   __IO uint32_t  RTCSS;                             /*!< Hibernation RTC Sub Seconds                                           */
-  __IO uint32_t  IO;                                /*!< Hibernation IO Configuration                                          */
+  __I  uint32_t  RESERVED1;
   __IO uint32_t  DATA;                              /*!< Hibernation Data                                                      */
-  __I  uint32_t  RESERVED1[179];
-  __IO uint32_t  CALCTL;                            /*!< Hibernation Calendar Control                                          */
-  __I  uint32_t  RESERVED2[3];
-  __IO uint32_t  CAL0;                              /*!< Hibernation Calendar 0                                                */
-  __IO uint32_t  CAL1;                              /*!< Hibernation Calendar 1                                                */
-  __I  uint32_t  RESERVED3[2];
-  __O  uint32_t  CALLD0;                            /*!< Hibernation Calendar Load 0                                           */
-  __O  uint32_t  CALLD1;                            /*!< Hibernation Calendar Load                                             */
-  __I  uint32_t  RESERVED4[2];
-  __IO uint32_t  CALM0;                             /*!< Hibernation Calendar Match 0                                          */
-  __IO uint32_t  CALM1;                             /*!< Hibernation Calendar Match 1                                          */
-  __I  uint32_t  RESERVED5[10];
-  __IO uint32_t  LOCK;                              /*!< Hibernation Lock                                                      */
-  __I  uint32_t  RESERVED6[39];
-  __IO uint32_t  TPCTL;                             /*!< HIB Tamper Control                                                    */
-  __IO uint32_t  TPSTAT;                            /*!< HIB Tamper Status                                                     */
-  __I  uint32_t  RESERVED7[2];
-  __IO uint32_t  TPIO;                              /*!< HIB Tamper I/O Control                                                */
-  __I  uint32_t  RESERVED8[51];
-  __IO uint32_t  TPLOG0;                            /*!< HIB Tamper Log 0                                                      */
-  __IO uint32_t  TPLOG1;                            /*!< HIB Tamper Log 1                                                      */
-  __IO uint32_t  TPLOG2;                            /*!< HIB Tamper Log 2                                                      */
-  __IO uint32_t  TPLOG3;                            /*!< HIB Tamper Log 3                                                      */
-  __IO uint32_t  TPLOG4;                            /*!< HIB Tamper Log 4                                                      */
-  __IO uint32_t  TPLOG5;                            /*!< HIB Tamper Log 5                                                      */
-  __IO uint32_t  TPLOG6;                            /*!< HIB Tamper Log 6                                                      */
-  __IO uint32_t  TPLOG7;                            /*!< HIB Tamper Log 7                                                      */
-  __I  uint32_t  RESERVED9[688];
-  __IO uint32_t  PP;                                /*!< Hibernation Peripheral Properties                                     */
-  __I  uint32_t  RESERVED10;
-  __IO uint32_t  CC;                                /*!< Hibernation Clock Control                                             */
 } HIB_Type;
 
 
@@ -1527,20 +1243,20 @@ typedef struct {                                    /*!< FLASH_CTRL Structure   
   __IO uint32_t  FMC2;                              /*!< Flash Memory Control 2                                                */
   __I  uint32_t  RESERVED1[3];
   __IO uint32_t  FWBVAL;                            /*!< Flash Write Buffer Valid                                              */
-  __I  uint32_t  RESERVED2[2];
-  __IO uint32_t  FLPEKEY;                           /*!< Flash Program/Erase Key                                               */
-  __I  uint32_t  RESERVED3[48];
+  __I  uint32_t  RESERVED2[51];
   __IO uint32_t  FWBN;                              /*!< Flash Write Buffer n                                                  */
-  __I  uint32_t  RESERVED4[943];
-  __IO uint32_t  PP;                                /*!< Flash Peripheral Properties                                           */
+  __I  uint32_t  RESERVED3[943];
+  __IO uint32_t  FSIZE;                             /*!< Flash Size                                                            */
   __IO uint32_t  SSIZE;                             /*!< SRAM Size                                                             */
-  __IO uint32_t  CONF;                              /*!< Flash Configuration Register                                          */
-  __IO uint32_t  ROMSWMAP;                          /*!< ROM Software Map                                                      */
-  __IO uint32_t  DMASZ;                             /*!< Flash DMA Address Size                                                */
-  __IO uint32_t  DMAST;                             /*!< Flash DMA Starting Address                                            */
-  __I  uint32_t  RESERVED5[63];
-  __IO uint32_t  RVP;                               /*!< Reset Vector Pointer                                                  */
-  __I  uint32_t  RESERVED6[62];
+  __I  uint32_t  RESERVED4;
+  
+  union {
+    __IO uint32_t  ROMSWMAP_FLASH_CTRL_ALT;         /*!< ROM Software Map                                                      */
+    __IO uint32_t  ROMSWMAP;                        /*!< ROM Software Map                                                      */
+  };
+  __I  uint32_t  RESERVED5[72];
+  __IO uint32_t  RMCTL;                             /*!< ROM Control                                                           */
+  __I  uint32_t  RESERVED6[55];
   __IO uint32_t  BOOTCFG;                           /*!< Boot Configuration                                                    */
   __I  uint32_t  RESERVED7[3];
   __IO uint32_t  USERREG0;                          /*!< User Register 0                                                       */
@@ -1552,35 +1268,11 @@ typedef struct {                                    /*!< FLASH_CTRL Structure   
   __IO uint32_t  FMPRE1;                            /*!< Flash Memory Protection Read Enable 1                                 */
   __IO uint32_t  FMPRE2;                            /*!< Flash Memory Protection Read Enable 2                                 */
   __IO uint32_t  FMPRE3;                            /*!< Flash Memory Protection Read Enable 3                                 */
-  __IO uint32_t  FMPRE4;                            /*!< Flash Memory Protection Read Enable 4                                 */
-  __IO uint32_t  FMPRE5;                            /*!< Flash Memory Protection Read Enable 5                                 */
-  __IO uint32_t  FMPRE6;                            /*!< Flash Memory Protection Read Enable 6                                 */
-  __IO uint32_t  FMPRE7;                            /*!< Flash Memory Protection Read Enable 7                                 */
-  __IO uint32_t  FMPRE8;                            /*!< Flash Memory Protection Read Enable 8                                 */
-  __IO uint32_t  FMPRE9;                            /*!< Flash Memory Protection Read Enable 9                                 */
-  __IO uint32_t  FMPRE10;                           /*!< Flash Memory Protection Read Enable 10                                */
-  __IO uint32_t  FMPRE11;                           /*!< Flash Memory Protection Read Enable 11                                */
-  __IO uint32_t  FMPRE12;                           /*!< Flash Memory Protection Read Enable 12                                */
-  __IO uint32_t  FMPRE13;                           /*!< Flash Memory Protection Read Enable 13                                */
-  __IO uint32_t  FMPRE14;                           /*!< Flash Memory Protection Read Enable 14                                */
-  __IO uint32_t  FMPRE15;                           /*!< Flash Memory Protection Read Enable 15                                */
-  __I  uint32_t  RESERVED9[112];
+  __I  uint32_t  RESERVED9[124];
   __IO uint32_t  FMPPE0;                            /*!< Flash Memory Protection Program Enable 0                              */
   __IO uint32_t  FMPPE1;                            /*!< Flash Memory Protection Program Enable 1                              */
   __IO uint32_t  FMPPE2;                            /*!< Flash Memory Protection Program Enable 2                              */
   __IO uint32_t  FMPPE3;                            /*!< Flash Memory Protection Program Enable 3                              */
-  __IO uint32_t  FMPPE4;                            /*!< Flash Memory Protection Program Enable 4                              */
-  __IO uint32_t  FMPPE5;                            /*!< Flash Memory Protection Program Enable 5                              */
-  __IO uint32_t  FMPPE6;                            /*!< Flash Memory Protection Program Enable 6                              */
-  __IO uint32_t  FMPPE7;                            /*!< Flash Memory Protection Program Enable 7                              */
-  __IO uint32_t  FMPPE8;                            /*!< Flash Memory Protection Program Enable 8                              */
-  __IO uint32_t  FMPPE9;                            /*!< Flash Memory Protection Program Enable 9                              */
-  __IO uint32_t  FMPPE10;                           /*!< Flash Memory Protection Program Enable 10                             */
-  __IO uint32_t  FMPPE11;                           /*!< Flash Memory Protection Program Enable 11                             */
-  __IO uint32_t  FMPPE12;                           /*!< Flash Memory Protection Program Enable 12                             */
-  __IO uint32_t  FMPPE13;                           /*!< Flash Memory Protection Program Enable 13                             */
-  __IO uint32_t  FMPPE14;                           /*!< Flash Memory Protection Program Enable 14                             */
-  __IO uint32_t  FMPPE15;                           /*!< Flash Memory Protection Program Enable 15                             */
 } FLASH_CTRL_Type;
 
 
@@ -1596,240 +1288,196 @@ typedef struct {                                    /*!< FLASH_CTRL Structure   
 typedef struct {                                    /*!< SYSCTL Structure                                                      */
   __IO uint32_t  DID0;                              /*!< Device Identification 0                                               */
   __IO uint32_t  DID1;                              /*!< Device Identification 1                                               */
-  __I  uint32_t  RESERVED0[12];
-  __IO uint32_t  PTBOCTL;                           /*!< Power-Temp Brown Out Control                                          */
-  __I  uint32_t  RESERVED1[5];
+  __IO uint32_t  DC0;                               /*!< Device Capabilities 0                                                 */
+  __I  uint32_t  RESERVED0;
+  __IO uint32_t  DC1;                               /*!< Device Capabilities 1                                                 */
+  __IO uint32_t  DC2;                               /*!< Device Capabilities 2                                                 */
+  __IO uint32_t  DC3;                               /*!< Device Capabilities 3                                                 */
+  __IO uint32_t  DC4;                               /*!< Device Capabilities 4                                                 */
+  __IO uint32_t  DC5;                               /*!< Device Capabilities 5                                                 */
+  __IO uint32_t  DC6;                               /*!< Device Capabilities 6                                                 */
+  __IO uint32_t  DC7;                               /*!< Device Capabilities 7                                                 */
+  __IO uint32_t  DC8;                               /*!< Device Capabilities 8                                                 */
+  __IO uint32_t  PBORCTL;                           /*!< Brown-Out Reset Control                                               */
+  __I  uint32_t  RESERVED1[3];
+  __IO uint32_t  SRCR0;                             /*!< Software Reset Control 0                                              */
+  __IO uint32_t  SRCR1;                             /*!< Software Reset Control 1                                              */
+  __IO uint32_t  SRCR2;                             /*!< Software Reset Control 2                                              */
+  __I  uint32_t  RESERVED2;
   __IO uint32_t  RIS;                               /*!< Raw Interrupt Status                                                  */
   __IO uint32_t  IMC;                               /*!< Interrupt Mask Control                                                */
   __IO uint32_t  MISC;                              /*!< Masked Interrupt Status and Clear                                     */
   __IO uint32_t  RESC;                              /*!< Reset Cause                                                           */
-  __IO uint32_t  PWRTC;                             /*!< Power-Temperature Cause                                               */
-  __IO uint32_t  NMIC;                              /*!< NMI Cause Register                                                    */
-  __I  uint32_t  RESERVED2[5];
+  __IO uint32_t  RCC;                               /*!< Run-Mode Clock Configuration                                          */
+  __I  uint32_t  RESERVED3[2];
+  __IO uint32_t  GPIOHBCTL;                         /*!< GPIO High-Performance Bus Control                                     */
+  __IO uint32_t  RCC2;                              /*!< Run-Mode Clock Configuration 2                                        */
+  __I  uint32_t  RESERVED4[2];
   __IO uint32_t  MOSCCTL;                           /*!< Main Oscillator Control                                               */
-  __I  uint32_t  RESERVED3[12];
-  __IO uint32_t  RSCLKCFG;                          /*!< Run and Sleep Mode Configuration Register                             */
-  __I  uint32_t  RESERVED4[3];
-  __IO uint32_t  MEMTIM0;                           /*!< Memory Timing Parameter Register 0 for Main Flash and EEPROM          */
-  __I  uint32_t  RESERVED5[29];
-  __IO uint32_t  ALTCLKCFG;                         /*!< Alternate Clock Configuration                                         */
-  __I  uint32_t  RESERVED6[2];
-  __IO uint32_t  DSCLKCFG;                          /*!< Deep Sleep Clock Configuration Register                               */
-  __IO uint32_t  DIVSCLK;                           /*!< Divisor and Source Clock Configuration                                */
+  __I  uint32_t  RESERVED5[32];
+  __IO uint32_t  RCGC0;                             /*!< Run Mode Clock Gating Control Register 0                              */
+  __IO uint32_t  RCGC1;                             /*!< Run Mode Clock Gating Control Register 1                              */
+  __IO uint32_t  RCGC2;                             /*!< Run Mode Clock Gating Control Register 2                              */
+  __I  uint32_t  RESERVED6;
+  __IO uint32_t  SCGC0;                             /*!< Sleep Mode Clock Gating Control Register 0                            */
+  __IO uint32_t  SCGC1;                             /*!< Sleep Mode Clock Gating Control Register 1                            */
+  __IO uint32_t  SCGC2;                             /*!< Sleep Mode Clock Gating Control Register 2                            */
+  __I  uint32_t  RESERVED7;
+  __IO uint32_t  DCGC0;                             /*!< Deep Sleep Mode Clock Gating Control Register 0                       */
+  __IO uint32_t  DCGC1;                             /*!< Deep-Sleep Mode Clock Gating Control Register 1                       */
+  __IO uint32_t  DCGC2;                             /*!< Deep Sleep Mode Clock Gating Control Register 2                       */
+  __I  uint32_t  RESERVED8[6];
+  __IO uint32_t  DSLPCLKCFG;                        /*!< Deep Sleep Clock Configuration                                        */
+  __I  uint32_t  RESERVED9;
   __IO uint32_t  SYSPROP;                           /*!< System Properties                                                     */
   __IO uint32_t  PIOSCCAL;                          /*!< Precision Internal Oscillator Calibration                             */
   __IO uint32_t  PIOSCSTAT;                         /*!< Precision Internal Oscillator Statistics                              */
-  __I  uint32_t  RESERVED7[2];
+  __I  uint32_t  RESERVED10[2];
   __IO uint32_t  PLLFREQ0;                          /*!< PLL Frequency 0                                                       */
   __IO uint32_t  PLLFREQ1;                          /*!< PLL Frequency 1                                                       */
   __IO uint32_t  PLLSTAT;                           /*!< PLL Status                                                            */
-  __I  uint32_t  RESERVED8[7];
+  __I  uint32_t  RESERVED11[7];
   __IO uint32_t  SLPPWRCFG;                         /*!< Sleep Power Configuration                                             */
   __IO uint32_t  DSLPPWRCFG;                        /*!< Deep-Sleep Power Configuration                                        */
-  __I  uint32_t  RESERVED9[4];
+  __IO uint32_t  DC9;                               /*!< Device Capabilities 9                                                 */
+  __I  uint32_t  RESERVED12[3];
   __IO uint32_t  NVMSTAT;                           /*!< Non-Volatile Memory Information                                       */
-  __I  uint32_t  RESERVED10[4];
+  __I  uint32_t  RESERVED13[4];
   __IO uint32_t  LDOSPCTL;                          /*!< LDO Sleep Power Control                                               */
-  __I  uint32_t  RESERVED11;
+  __I  uint32_t  RESERVED14;
   __IO uint32_t  LDODPCTL;                          /*!< LDO Deep-Sleep Power Control                                          */
-  __I  uint32_t  RESERVED12[6];
-  __IO uint32_t  RESBEHAVCTL;                       /*!< Reset Behavior Control Register                                       */
-  __I  uint32_t  RESERVED13[6];
-  __IO uint32_t  HSSR;                              /*!< Hardware System Service Request                                       */
-  __I  uint32_t  RESERVED14[34];
-  __IO uint32_t  USBPDS;                            /*!< USB Power Domain Status                                               */
-  __IO uint32_t  USBMPC;                            /*!< USB Memory Power Control                                              */
-  __IO uint32_t  EMACPDS;                           /*!< Ethernet MAC Power Domain Status                                      */
-  __IO uint32_t  EMACMPC;                           /*!< Ethernet MAC Memory Power Control                                     */
-  __I  uint32_t  RESERVED15[28];
+  __I  uint32_t  RESERVED15[80];
   __IO uint32_t  PPWD;                              /*!< Watchdog Timer Peripheral Present                                     */
   __IO uint32_t  PPTIMER;                           /*!< 16/32-Bit General-Purpose Timer Peripheral Present                    */
   __IO uint32_t  PPGPIO;                            /*!< General-Purpose Input/Output Peripheral Present                       */
   __IO uint32_t  PPDMA;                             /*!< Micro Direct Memory Access Peripheral Present                         */
-  __IO uint32_t  PPEPI;                             /*!< EPI Peripheral Present                                                */
+  __I  uint32_t  RESERVED16;
   __IO uint32_t  PPHIB;                             /*!< Hibernation Peripheral Present                                        */
   __IO uint32_t  PPUART;                            /*!< Universal Asynchronous Receiver/Transmitter Peripheral Present        */
   __IO uint32_t  PPSSI;                             /*!< Synchronous Serial Interface Peripheral Present                       */
   __IO uint32_t  PPI2C;                             /*!< Inter-Integrated Circuit Peripheral Present                           */
-  __I  uint32_t  RESERVED16;
-  __IO uint32_t  PPUSB;                             /*!< Universal Serial Bus Peripheral Present                               */
   __I  uint32_t  RESERVED17;
-  __IO uint32_t  PPEPHY;                            /*!< Ethernet PHY Peripheral Present                                       */
+  __IO uint32_t  PPUSB;                             /*!< Universal Serial Bus Peripheral Present                               */
+  __I  uint32_t  RESERVED18[2];
   __IO uint32_t  PPCAN;                             /*!< Controller Area Network Peripheral Present                            */
   __IO uint32_t  PPADC;                             /*!< Analog-to-Digital Converter Peripheral Present                        */
   __IO uint32_t  PPACMP;                            /*!< Analog Comparator Peripheral Present                                  */
   __IO uint32_t  PPPWM;                             /*!< Pulse Width Modulator Peripheral Present                              */
   __IO uint32_t  PPQEI;                             /*!< Quadrature Encoder Interface Peripheral Present                       */
-  __IO uint32_t  PPLPC;                             /*!< Low Pin Count Interface Peripheral Present                            */
-  __I  uint32_t  RESERVED18;
-  __IO uint32_t  PPPECI;                            /*!< Platform Environment Control Interface Peripheral Present             */
-  __IO uint32_t  PPFAN;                             /*!< Fan Control Peripheral Present                                        */
+  __I  uint32_t  RESERVED19[4];
   __IO uint32_t  PPEEPROM;                          /*!< EEPROM Peripheral Present                                             */
   __IO uint32_t  PPWTIMER;                          /*!< 32/64-Bit Wide General-Purpose Timer Peripheral Present               */
-  __I  uint32_t  RESERVED19[4];
-  __IO uint32_t  PPRTS;                             /*!< Remote Temperature Sensor Peripheral Present                          */
-  __IO uint32_t  PPCCM;                             /*!< CRC and Cryptographic Modules Peripheral Present                      */
-  __I  uint32_t  RESERVED20[6];
-  __IO uint32_t  PPLCD;                             /*!< LCD Peripheral Present                                                */
-  __I  uint32_t  RESERVED21;
-  __IO uint32_t  PPOWIRE;                           /*!< 1-Wire Peripheral Present                                             */
-  __IO uint32_t  PPEMAC;                            /*!< Ethernet MAC Peripheral Present                                       */
-  __I  uint32_t  RESERVED22;
-  __IO uint32_t  PPHIM;                             /*!< Human Interface Master Peripheral Present                             */
-  __I  uint32_t  RESERVED23[86];
+  __I  uint32_t  RESERVED20[104];
   __IO uint32_t  SRWD;                              /*!< Watchdog Timer Software Reset                                         */
   __IO uint32_t  SRTIMER;                           /*!< 16/32-Bit General-Purpose Timer Software Reset                        */
   __IO uint32_t  SRGPIO;                            /*!< General-Purpose Input/Output Software Reset                           */
   __IO uint32_t  SRDMA;                             /*!< Micro Direct Memory Access Software Reset                             */
-  __IO uint32_t  SREPI;                             /*!< EPI Software Reset                                                    */
+  __I  uint32_t  RESERVED21;
   __IO uint32_t  SRHIB;                             /*!< Hibernation Software Reset                                            */
   __IO uint32_t  SRUART;                            /*!< Universal Asynchronous Receiver/Transmitter Software Reset            */
   __IO uint32_t  SRSSI;                             /*!< Synchronous Serial Interface Software Reset                           */
   __IO uint32_t  SRI2C;                             /*!< Inter-Integrated Circuit Software Reset                               */
-  __I  uint32_t  RESERVED24;
+  __I  uint32_t  RESERVED22;
   __IO uint32_t  SRUSB;                             /*!< Universal Serial Bus Software Reset                                   */
-  __I  uint32_t  RESERVED25;
-  __IO uint32_t  SREPHY;                            /*!< Ethernet PHY Software Reset                                           */
+  __I  uint32_t  RESERVED23[2];
   __IO uint32_t  SRCAN;                             /*!< Controller Area Network Software Reset                                */
   __IO uint32_t  SRADC;                             /*!< Analog-to-Digital Converter Software Reset                            */
   __IO uint32_t  SRACMP;                            /*!< Analog Comparator Software Reset                                      */
   __IO uint32_t  SRPWM;                             /*!< Pulse Width Modulator Software Reset                                  */
   __IO uint32_t  SRQEI;                             /*!< Quadrature Encoder Interface Software Reset                           */
-  __I  uint32_t  RESERVED26[4];
+  __I  uint32_t  RESERVED24[4];
   __IO uint32_t  SREEPROM;                          /*!< EEPROM Software Reset                                                 */
-  __I  uint32_t  RESERVED27[6];
-  __IO uint32_t  SRCCM;                             /*!< CRC and Cryptographic Modules Software Reset                          */
-  __I  uint32_t  RESERVED28[9];
-  __IO uint32_t  SREMAC;                            /*!< Ethernet MAC Software Reset                                           */
-  __I  uint32_t  RESERVED29[24];
+  __IO uint32_t  SRWTIMER;                          /*!< 32/64-Bit Wide General-Purpose Timer Software Reset                   */
+  __I  uint32_t  RESERVED25[40];
   __IO uint32_t  RCGCWD;                            /*!< Watchdog Timer Run Mode Clock Gating Control                          */
   __IO uint32_t  RCGCTIMER;                         /*!< 16/32-Bit General-Purpose Timer Run Mode Clock Gating Control         */
   __IO uint32_t  RCGCGPIO;                          /*!< General-Purpose Input/Output Run Mode Clock Gating Control            */
   __IO uint32_t  RCGCDMA;                           /*!< Micro Direct Memory Access Run Mode Clock Gating Control              */
-  __IO uint32_t  RCGCEPI;                           /*!< EPI Run Mode Clock Gating Control                                     */
+  __I  uint32_t  RESERVED26;
   __IO uint32_t  RCGCHIB;                           /*!< Hibernation Run Mode Clock Gating Control                             */
   __IO uint32_t  RCGCUART;                          /*!< Universal Asynchronous Receiver/Transmitter Run Mode Clock Gating
                                                          Control                                                               */
   __IO uint32_t  RCGCSSI;                           /*!< Synchronous Serial Interface Run Mode Clock Gating Control            */
   __IO uint32_t  RCGCI2C;                           /*!< Inter-Integrated Circuit Run Mode Clock Gating Control                */
-  __I  uint32_t  RESERVED30;
+  __I  uint32_t  RESERVED27;
   __IO uint32_t  RCGCUSB;                           /*!< Universal Serial Bus Run Mode Clock Gating Control                    */
-  __I  uint32_t  RESERVED31;
-  __IO uint32_t  RCGCEPHY;                          /*!< Ethernet PHY Run Mode Clock Gating Control                            */
+  __I  uint32_t  RESERVED28[2];
   __IO uint32_t  RCGCCAN;                           /*!< Controller Area Network Run Mode Clock Gating Control                 */
   __IO uint32_t  RCGCADC;                           /*!< Analog-to-Digital Converter Run Mode Clock Gating Control             */
   __IO uint32_t  RCGCACMP;                          /*!< Analog Comparator Run Mode Clock Gating Control                       */
   __IO uint32_t  RCGCPWM;                           /*!< Pulse Width Modulator Run Mode Clock Gating Control                   */
   __IO uint32_t  RCGCQEI;                           /*!< Quadrature Encoder Interface Run Mode Clock Gating Control            */
-  __I  uint32_t  RESERVED32[4];
+  __I  uint32_t  RESERVED29[4];
   __IO uint32_t  RCGCEEPROM;                        /*!< EEPROM Run Mode Clock Gating Control                                  */
-  __I  uint32_t  RESERVED33[6];
-  __IO uint32_t  RCGCCCM;                           /*!< CRC and Cryptographic Modules Run Mode Clock Gating Control           */
-  __I  uint32_t  RESERVED34[9];
-  __IO uint32_t  RCGCEMAC;                          /*!< Ethernet MAC Run Mode Clock Gating Control                            */
-  __I  uint32_t  RESERVED35[24];
+  __IO uint32_t  RCGCWTIMER;                        /*!< 32/64-Bit Wide General-Purpose Timer Run Mode Clock Gating Control    */
+  __I  uint32_t  RESERVED30[40];
   __IO uint32_t  SCGCWD;                            /*!< Watchdog Timer Sleep Mode Clock Gating Control                        */
   __IO uint32_t  SCGCTIMER;                         /*!< 16/32-Bit General-Purpose Timer Sleep Mode Clock Gating Control       */
   __IO uint32_t  SCGCGPIO;                          /*!< General-Purpose Input/Output Sleep Mode Clock Gating Control          */
   __IO uint32_t  SCGCDMA;                           /*!< Micro Direct Memory Access Sleep Mode Clock Gating Control            */
-  __IO uint32_t  SCGCEPI;                           /*!< EPI Sleep Mode Clock Gating Control                                   */
+  __I  uint32_t  RESERVED31;
   __IO uint32_t  SCGCHIB;                           /*!< Hibernation Sleep Mode Clock Gating Control                           */
   __IO uint32_t  SCGCUART;                          /*!< Universal Asynchronous Receiver/Transmitter Sleep Mode Clock
                                                          Gating Control                                                        */
   __IO uint32_t  SCGCSSI;                           /*!< Synchronous Serial Interface Sleep Mode Clock Gating Control          */
   __IO uint32_t  SCGCI2C;                           /*!< Inter-Integrated Circuit Sleep Mode Clock Gating Control              */
-  __I  uint32_t  RESERVED36;
+  __I  uint32_t  RESERVED32;
   __IO uint32_t  SCGCUSB;                           /*!< Universal Serial Bus Sleep Mode Clock Gating Control                  */
-  __I  uint32_t  RESERVED37;
-  __IO uint32_t  SCGCEPHY;                          /*!< Ethernet PHY Sleep Mode Clock Gating Control                          */
+  __I  uint32_t  RESERVED33[2];
   __IO uint32_t  SCGCCAN;                           /*!< Controller Area Network Sleep Mode Clock Gating Control               */
   __IO uint32_t  SCGCADC;                           /*!< Analog-to-Digital Converter Sleep Mode Clock Gating Control           */
   __IO uint32_t  SCGCACMP;                          /*!< Analog Comparator Sleep Mode Clock Gating Control                     */
   __IO uint32_t  SCGCPWM;                           /*!< Pulse Width Modulator Sleep Mode Clock Gating Control                 */
   __IO uint32_t  SCGCQEI;                           /*!< Quadrature Encoder Interface Sleep Mode Clock Gating Control          */
-  __I  uint32_t  RESERVED38[4];
+  __I  uint32_t  RESERVED34[4];
   __IO uint32_t  SCGCEEPROM;                        /*!< EEPROM Sleep Mode Clock Gating Control                                */
-  __I  uint32_t  RESERVED39[6];
-  __IO uint32_t  SCGCCCM;                           /*!< CRC and Cryptographic Modules Sleep Mode Clock Gating Control         */
-  __I  uint32_t  RESERVED40[9];
-  __IO uint32_t  SCGCEMAC;                          /*!< Ethernet MAC Sleep Mode Clock Gating Control                          */
-  __I  uint32_t  RESERVED41[24];
+  __IO uint32_t  SCGCWTIMER;                        /*!< 32/64-Bit Wide General-Purpose Timer Sleep Mode Clock Gating
+                                                         Control                                                               */
+  __I  uint32_t  RESERVED35[40];
   __IO uint32_t  DCGCWD;                            /*!< Watchdog Timer Deep-Sleep Mode Clock Gating Control                   */
   __IO uint32_t  DCGCTIMER;                         /*!< 16/32-Bit General-Purpose Timer Deep-Sleep Mode Clock Gating
                                                          Control                                                               */
   __IO uint32_t  DCGCGPIO;                          /*!< General-Purpose Input/Output Deep-Sleep Mode Clock Gating Control     */
   __IO uint32_t  DCGCDMA;                           /*!< Micro Direct Memory Access Deep-Sleep Mode Clock Gating Control       */
-  __IO uint32_t  DCGCEPI;                           /*!< EPI Deep-Sleep Mode Clock Gating Control                              */
+  __I  uint32_t  RESERVED36;
   __IO uint32_t  DCGCHIB;                           /*!< Hibernation Deep-Sleep Mode Clock Gating Control                      */
   __IO uint32_t  DCGCUART;                          /*!< Universal Asynchronous Receiver/Transmitter Deep-Sleep Mode
                                                          Clock Gating Control                                                  */
   __IO uint32_t  DCGCSSI;                           /*!< Synchronous Serial Interface Deep-Sleep Mode Clock Gating Control     */
   __IO uint32_t  DCGCI2C;                           /*!< Inter-Integrated Circuit Deep-Sleep Mode Clock Gating Control         */
-  __I  uint32_t  RESERVED42;
+  __I  uint32_t  RESERVED37;
   __IO uint32_t  DCGCUSB;                           /*!< Universal Serial Bus Deep-Sleep Mode Clock Gating Control             */
-  __I  uint32_t  RESERVED43;
-  __IO uint32_t  DCGCEPHY;                          /*!< Ethernet PHY Deep-Sleep Mode Clock Gating Control                     */
+  __I  uint32_t  RESERVED38[2];
   __IO uint32_t  DCGCCAN;                           /*!< Controller Area Network Deep-Sleep Mode Clock Gating Control          */
   __IO uint32_t  DCGCADC;                           /*!< Analog-to-Digital Converter Deep-Sleep Mode Clock Gating Control      */
   __IO uint32_t  DCGCACMP;                          /*!< Analog Comparator Deep-Sleep Mode Clock Gating Control                */
   __IO uint32_t  DCGCPWM;                           /*!< Pulse Width Modulator Deep-Sleep Mode Clock Gating Control            */
   __IO uint32_t  DCGCQEI;                           /*!< Quadrature Encoder Interface Deep-Sleep Mode Clock Gating Control     */
-  __I  uint32_t  RESERVED44[4];
+  __I  uint32_t  RESERVED39[4];
   __IO uint32_t  DCGCEEPROM;                        /*!< EEPROM Deep-Sleep Mode Clock Gating Control                           */
-  __I  uint32_t  RESERVED45[6];
-  __IO uint32_t  DCGCCCM;                           /*!< CRC and Cryptographic Modules Deep-Sleep Mode Clock Gating Control    */
-  __I  uint32_t  RESERVED46[9];
-  __IO uint32_t  DCGCEMAC;                          /*!< Ethernet MAC Deep-Sleep Mode Clock Gating Control                     */
-  __I  uint32_t  RESERVED47[24];
-  __IO uint32_t  PCWD;                              /*!< Watchdog Timer Power Control                                          */
-  __IO uint32_t  PCTIMER;                           /*!< 16/32-Bit General-Purpose Timer Power Control                         */
-  __IO uint32_t  PCGPIO;                            /*!< General-Purpose Input/Output Power Control                            */
-  __IO uint32_t  PCDMA;                             /*!< Micro Direct Memory Access Power Control                              */
-  __IO uint32_t  PCEPI;                             /*!< External Peripheral Interface Power Control                           */
-  __IO uint32_t  PCHIB;                             /*!< Hibernation Power Control                                             */
-  __IO uint32_t  PCUART;                            /*!< Universal Asynchronous Receiver/Transmitter Power Control             */
-  __IO uint32_t  PCSSI;                             /*!< Synchronous Serial Interface Power Control                            */
-  __IO uint32_t  PCI2C;                             /*!< Inter-Integrated Circuit Power Control                                */
-  __I  uint32_t  RESERVED48;
-  __IO uint32_t  PCUSB;                             /*!< Universal Serial Bus Power Control                                    */
-  __I  uint32_t  RESERVED49;
-  __IO uint32_t  PCEPHY;                            /*!< Ethernet PHY Power Control                                            */
-  __IO uint32_t  PCCAN;                             /*!< Controller Area Network Power Control                                 */
-  __IO uint32_t  PCADC;                             /*!< Analog-to-Digital Converter Power Control                             */
-  __IO uint32_t  PCACMP;                            /*!< Analog Comparator Power Control                                       */
-  __IO uint32_t  PCPWM;                             /*!< Pulse Width Modulator Power Control                                   */
-  __IO uint32_t  PCQEI;                             /*!< Quadrature Encoder Interface Power Control                            */
-  __I  uint32_t  RESERVED50[4];
-  __IO uint32_t  PCEEPROM;                          /*!< EEPROM Power Control                                                  */
-  __I  uint32_t  RESERVED51[6];
-  __IO uint32_t  PCCCM;                             /*!< CRC and Cryptographic Modules Power Control                           */
-  __I  uint32_t  RESERVED52[9];
-  __IO uint32_t  PCEMAC;                            /*!< Ethernet MAC Power Control                                            */
-  __I  uint32_t  RESERVED53[24];
+  __IO uint32_t  DCGCWTIMER;                        /*!< 32/64-Bit Wide General-Purpose Timer Deep-Sleep Mode Clock Gating
+                                                         Control                                                               */
+  __I  uint32_t  RESERVED40[104];
   __IO uint32_t  PRWD;                              /*!< Watchdog Timer Peripheral Ready                                       */
   __IO uint32_t  PRTIMER;                           /*!< 16/32-Bit General-Purpose Timer Peripheral Ready                      */
   __IO uint32_t  PRGPIO;                            /*!< General-Purpose Input/Output Peripheral Ready                         */
   __IO uint32_t  PRDMA;                             /*!< Micro Direct Memory Access Peripheral Ready                           */
-  __IO uint32_t  PREPI;                             /*!< EPI Peripheral Ready                                                  */
+  __I  uint32_t  RESERVED41;
   __IO uint32_t  PRHIB;                             /*!< Hibernation Peripheral Ready                                          */
   __IO uint32_t  PRUART;                            /*!< Universal Asynchronous Receiver/Transmitter Peripheral Ready          */
   __IO uint32_t  PRSSI;                             /*!< Synchronous Serial Interface Peripheral Ready                         */
   __IO uint32_t  PRI2C;                             /*!< Inter-Integrated Circuit Peripheral Ready                             */
-  __I  uint32_t  RESERVED54;
+  __I  uint32_t  RESERVED42;
   __IO uint32_t  PRUSB;                             /*!< Universal Serial Bus Peripheral Ready                                 */
-  __I  uint32_t  RESERVED55;
-  __IO uint32_t  PREPHY;                            /*!< Ethernet PHY Peripheral Ready                                         */
+  __I  uint32_t  RESERVED43[2];
   __IO uint32_t  PRCAN;                             /*!< Controller Area Network Peripheral Ready                              */
   __IO uint32_t  PRADC;                             /*!< Analog-to-Digital Converter Peripheral Ready                          */
   __IO uint32_t  PRACMP;                            /*!< Analog Comparator Peripheral Ready                                    */
   __IO uint32_t  PRPWM;                             /*!< Pulse Width Modulator Peripheral Ready                                */
   __IO uint32_t  PRQEI;                             /*!< Quadrature Encoder Interface Peripheral Ready                         */
-  __I  uint32_t  RESERVED56[4];
+  __I  uint32_t  RESERVED44[4];
   __IO uint32_t  PREEPROM;                          /*!< EEPROM Peripheral Ready                                               */
-  __I  uint32_t  RESERVED57[6];
-  __IO uint32_t  PRCCM;                             /*!< CRC and Cryptographic Modules Peripheral Ready                        */
-  __I  uint32_t  RESERVED58[9];
-  __IO uint32_t  PREMAC;                            /*!< Ethernet MAC Peripheral Ready                                         */
+  __IO uint32_t  PRWTIMER;                          /*!< 32/64-Bit Wide General-Purpose Timer Peripheral Ready                 */
 } SYSCTL_Type;
 
 
@@ -1863,31 +1511,13 @@ typedef struct {                                    /*!< UDMA Structure         
   __IO uint32_t  ERRCLR;                            /*!< DMA Bus Error Clear                                                   */
   __I  uint32_t  RESERVED1[300];
   __IO uint32_t  CHASGN;                            /*!< DMA Channel Assignment                                                */
-  __I  uint32_t  RESERVED2[3];
+  __IO uint32_t  CHIS;                              /*!< DMA Channel Interrupt Status                                          */
+  __I  uint32_t  RESERVED2[2];
   __IO uint32_t  CHMAP0;                            /*!< DMA Channel Map Select 0                                              */
   __IO uint32_t  CHMAP1;                            /*!< DMA Channel Map Select 1                                              */
   __IO uint32_t  CHMAP2;                            /*!< DMA Channel Map Select 2                                              */
   __IO uint32_t  CHMAP3;                            /*!< DMA Channel Map Select 3                                              */
 } UDMA_Type;
-
-
-/* ================================================================================ */
-/* ================                      CCM0                      ================ */
-/* ================================================================================ */
-
-
-/**
-  * @brief Register map for CCM0 peripheral (CCM0)
-  */
-
-typedef struct {                                    /*!< CCM0 Structure                                                        */
-  __I  uint32_t  RESERVED0[256];
-  __IO uint32_t  CRCCTRL;                           /*!< CRC Control                                                           */
-  __I  uint32_t  RESERVED1[3];
-  __IO uint32_t  CRCSEED;                           /*!< CRC SEED/Context                                                      */
-  __IO uint32_t  CRCDIN;                            /*!< CRC Data Input                                                        */
-  __IO uint32_t  CRCRSLTPP;                         /*!< CRC Post Processing Result                                            */
-} CCM0_Type;
 
 
 /* --------------------  End of section using anonymous unions  ------------------- */
@@ -1914,6 +1544,10 @@ typedef struct {                                    /*!< CCM0 Structure         
 
 #define WATCHDOG0_BASE                  0x40000000UL
 #define WATCHDOG1_BASE                  0x40001000UL
+#define GPIOA_BASE                      0x40004000UL
+#define GPIOB_BASE                      0x40005000UL
+#define GPIOC_BASE                      0x40006000UL
+#define GPIOD_BASE                      0x40007000UL
 #define SSI0_BASE                       0x40008000UL
 #define SSI1_BASE                       0x40009000UL
 #define SSI2_BASE                       0x4000A000UL
@@ -1930,19 +1564,29 @@ typedef struct {                                    /*!< CCM0 Structure         
 #define I2C1_BASE                       0x40021000UL
 #define I2C2_BASE                       0x40022000UL
 #define I2C3_BASE                       0x40023000UL
+#define GPIOE_BASE                      0x40024000UL
+#define GPIOF_BASE                      0x40025000UL
 #define PWM0_BASE                       0x40028000UL
+#define PWM1_BASE                       0x40029000UL
 #define QEI0_BASE                       0x4002C000UL
+#define QEI1_BASE                       0x4002D000UL
 #define TIMER0_BASE                     0x40030000UL
 #define TIMER1_BASE                     0x40031000UL
 #define TIMER2_BASE                     0x40032000UL
 #define TIMER3_BASE                     0x40033000UL
 #define TIMER4_BASE                     0x40034000UL
 #define TIMER5_BASE                     0x40035000UL
+#define WTIMER0_BASE                    0x40036000UL
+#define WTIMER1_BASE                    0x40037000UL
 #define ADC0_BASE                       0x40038000UL
 #define ADC1_BASE                       0x40039000UL
 #define COMP_BASE                       0x4003C000UL
 #define CAN0_BASE                       0x40040000UL
 #define CAN1_BASE                       0x40041000UL
+#define WTIMER2_BASE                    0x4004C000UL
+#define WTIMER3_BASE                    0x4004D000UL
+#define WTIMER4_BASE                    0x4004E000UL
+#define WTIMER5_BASE                    0x4004F000UL
 #define USB0_BASE                       0x40050000UL
 #define GPIOA_AHB_BASE                  0x40058000UL
 #define GPIOB_AHB_BASE                  0x40059000UL
@@ -1950,32 +1594,12 @@ typedef struct {                                    /*!< CCM0 Structure         
 #define GPIOD_AHB_BASE                  0x4005B000UL
 #define GPIOE_AHB_BASE                  0x4005C000UL
 #define GPIOF_AHB_BASE                  0x4005D000UL
-#define GPIOG_AHB_BASE                  0x4005E000UL
-#define GPIOH_AHB_BASE                  0x4005F000UL
-#define GPIOJ_AHB_BASE                  0x40060000UL
-#define GPIOK_BASE                      0x40061000UL
-#define GPIOL_BASE                      0x40062000UL
-#define GPIOM_BASE                      0x40063000UL
-#define GPION_BASE                      0x40064000UL
-#define GPIOP_BASE                      0x40065000UL
-#define GPIOQ_BASE                      0x40066000UL
 #define EEPROM_BASE                     0x400AF000UL
-#define I2C8_BASE                       0x400B8000UL
-#define I2C9_BASE                       0x400B9000UL
-#define I2C4_BASE                       0x400C0000UL
-#define I2C5_BASE                       0x400C1000UL
-#define I2C6_BASE                       0x400C2000UL
-#define I2C7_BASE                       0x400C3000UL
-#define EPI0_BASE                       0x400D0000UL
-#define TIMER6_BASE                     0x400E0000UL
-#define TIMER7_BASE                     0x400E1000UL
-#define EMAC0_BASE                      0x400EC000UL
 #define SYSEXC_BASE                     0x400F9000UL
 #define HIB_BASE                        0x400FC000UL
 #define FLASH_CTRL_BASE                 0x400FD000UL
 #define SYSCTL_BASE                     0x400FE000UL
 #define UDMA_BASE                       0x400FF000UL
-#define CCM0_BASE                       0x44030000UL
 
 
 /* ================================================================================ */
@@ -1984,6 +1608,10 @@ typedef struct {                                    /*!< CCM0 Structure         
 
 #define WATCHDOG0                       ((WATCHDOG0_Type          *) WATCHDOG0_BASE)
 #define WATCHDOG1                       ((WATCHDOG0_Type          *) WATCHDOG1_BASE)
+#define GPIOA                           ((GPIOA_Type              *) GPIOA_BASE)
+#define GPIOB                           ((GPIOA_Type              *) GPIOB_BASE)
+#define GPIOC                           ((GPIOA_Type              *) GPIOC_BASE)
+#define GPIOD                           ((GPIOA_Type              *) GPIOD_BASE)
 #define SSI0                            ((SSI0_Type               *) SSI0_BASE)
 #define SSI1                            ((SSI0_Type               *) SSI1_BASE)
 #define SSI2                            ((SSI0_Type               *) SSI2_BASE)
@@ -2000,56 +1628,46 @@ typedef struct {                                    /*!< CCM0 Structure         
 #define I2C1                            ((I2C0_Type               *) I2C1_BASE)
 #define I2C2                            ((I2C0_Type               *) I2C2_BASE)
 #define I2C3                            ((I2C0_Type               *) I2C3_BASE)
+#define GPIOE                           ((GPIOA_Type              *) GPIOE_BASE)
+#define GPIOF                           ((GPIOA_Type              *) GPIOF_BASE)
 #define PWM0                            ((PWM0_Type               *) PWM0_BASE)
+#define PWM1                            ((PWM0_Type               *) PWM1_BASE)
 #define QEI0                            ((QEI0_Type               *) QEI0_BASE)
+#define QEI1                            ((QEI0_Type               *) QEI1_BASE)
 #define TIMER0                          ((TIMER0_Type             *) TIMER0_BASE)
 #define TIMER1                          ((TIMER0_Type             *) TIMER1_BASE)
 #define TIMER2                          ((TIMER0_Type             *) TIMER2_BASE)
 #define TIMER3                          ((TIMER0_Type             *) TIMER3_BASE)
 #define TIMER4                          ((TIMER0_Type             *) TIMER4_BASE)
 #define TIMER5                          ((TIMER0_Type             *) TIMER5_BASE)
+#define WTIMER0                         ((WTIMER0_Type            *) WTIMER0_BASE)
+#define WTIMER1                         ((TIMER0_Type             *) WTIMER1_BASE)
 #define ADC0                            ((ADC0_Type               *) ADC0_BASE)
 #define ADC1                            ((ADC0_Type               *) ADC1_BASE)
 #define COMP                            ((COMP_Type               *) COMP_BASE)
 #define CAN0                            ((CAN0_Type               *) CAN0_BASE)
 #define CAN1                            ((CAN0_Type               *) CAN1_BASE)
+#define WTIMER2                         ((TIMER0_Type             *) WTIMER2_BASE)
+#define WTIMER3                         ((TIMER0_Type             *) WTIMER3_BASE)
+#define WTIMER4                         ((TIMER0_Type             *) WTIMER4_BASE)
+#define WTIMER5                         ((TIMER0_Type             *) WTIMER5_BASE)
 #define USB0                            ((USB0_Type               *) USB0_BASE)
-#define GPIOA_AHB                       ((GPIOA_AHB_Type          *) GPIOA_AHB_BASE)
-#define GPIOB_AHB                       ((GPIOA_AHB_Type          *) GPIOB_AHB_BASE)
-#define GPIOC_AHB                       ((GPIOA_AHB_Type          *) GPIOC_AHB_BASE)
-#define GPIOD_AHB                       ((GPIOA_AHB_Type          *) GPIOD_AHB_BASE)
-#define GPIOE_AHB                       ((GPIOA_AHB_Type          *) GPIOE_AHB_BASE)
-#define GPIOF_AHB                       ((GPIOA_AHB_Type          *) GPIOF_AHB_BASE)
-#define GPIOG_AHB                       ((GPIOA_AHB_Type          *) GPIOG_AHB_BASE)
-#define GPIOH_AHB                       ((GPIOA_AHB_Type          *) GPIOH_AHB_BASE)
-#define GPIOJ_AHB                       ((GPIOA_AHB_Type          *) GPIOJ_AHB_BASE)
-#define GPIOK                           ((GPIOA_AHB_Type          *) GPIOK_BASE)
-#define GPIOL                           ((GPIOA_AHB_Type          *) GPIOL_BASE)
-#define GPIOM                           ((GPIOA_AHB_Type          *) GPIOM_BASE)
-#define GPION                           ((GPIOA_AHB_Type          *) GPION_BASE)
-#define GPIOP                           ((GPIOA_AHB_Type          *) GPIOP_BASE)
-#define GPIOQ                           ((GPIOA_AHB_Type          *) GPIOQ_BASE)
+#define GPIOA_AHB                       ((GPIOA_Type              *) GPIOA_AHB_BASE)
+#define GPIOB_AHB                       ((GPIOA_Type              *) GPIOB_AHB_BASE)
+#define GPIOC_AHB                       ((GPIOA_Type              *) GPIOC_AHB_BASE)
+#define GPIOD_AHB                       ((GPIOA_Type              *) GPIOD_AHB_BASE)
+#define GPIOE_AHB                       ((GPIOA_Type              *) GPIOE_AHB_BASE)
+#define GPIOF_AHB                       ((GPIOA_Type              *) GPIOF_AHB_BASE)
 #define EEPROM                          ((EEPROM_Type             *) EEPROM_BASE)
-#define I2C8                            ((I2C0_Type               *) I2C8_BASE)
-#define I2C9                            ((I2C0_Type               *) I2C9_BASE)
-#define I2C4                            ((I2C0_Type               *) I2C4_BASE)
-#define I2C5                            ((I2C0_Type               *) I2C5_BASE)
-#define I2C6                            ((I2C0_Type               *) I2C6_BASE)
-#define I2C7                            ((I2C0_Type               *) I2C7_BASE)
-#define EPI0                            ((EPI0_Type               *) EPI0_BASE)
-#define TIMER6                          ((TIMER0_Type             *) TIMER6_BASE)
-#define TIMER7                          ((TIMER0_Type             *) TIMER7_BASE)
-#define EMAC0                           ((EMAC0_Type              *) EMAC0_BASE)
 #define SYSEXC                          ((SYSEXC_Type             *) SYSEXC_BASE)
 #define HIB                             ((HIB_Type                *) HIB_BASE)
 #define FLASH_CTRL                      ((FLASH_CTRL_Type         *) FLASH_CTRL_BASE)
 #define SYSCTL                          ((SYSCTL_Type             *) SYSCTL_BASE)
 #define UDMA                            ((UDMA_Type               *) UDMA_BASE)
-#define CCM0                            ((CCM0_Type               *) CCM0_BASE)
 
 
 /** @} */ /* End of group Device_Peripheral_Registers */
-/** @} */ /* End of group TM4C1294NCPDT */
+/** @} */ /* End of group TM4C123GH6PM */
 /** @} */ /* End of group Texas Instruments */
 
 #ifdef __cplusplus
@@ -2057,5 +1675,5 @@ typedef struct {                                    /*!< CCM0 Structure         
 #endif
 
 
-#endif  /* TM4C1294NCPDT_H */
+#endif  /* TM4C123GH6PM_H */
 
