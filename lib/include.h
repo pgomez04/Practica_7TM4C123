@@ -50,6 +50,8 @@ SSInClk = SysClk / (CPSDVSR * (1 + SCR))
 #define _80MHZ 0x04 
 #define CPSDVSR  0x2
 #define SCR 0x4
+
+volatile uint16_t valor;
  
 
 #include "TM4C123GH6PM.h"

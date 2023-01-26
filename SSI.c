@@ -29,9 +29,16 @@ extern void Configurar_SSI2(void)
     SSI2->CR1 |= (1<<1); //SSE=1 habilitar modoulo p.961 (0x02)
 }
 
+extern void WriteSPI(uint16_t dato) //16 o 12 bits DUDAAA
+{
+    SSI2->DR = (uint16_t)dato;
+    while (SSI2->SR & (1<<0) == 0); //pila vacia, hasta que dato sea enviado
+}
+
+
 extern void SPI_write(uint8_t data)
 {
-    while (SSI2->SR & 0x2)
+    while (SSI2->SR & (1<<0) == 0); //pila vacia, hasta que dato sea enviado
     {
         SSI2->DR = (uint16_t)data;
     }
