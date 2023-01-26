@@ -20,15 +20,15 @@ extern void Configura_Reg_ADC0(void)
     //                     F     E      D       C      B     A
     SYSCTL->RCGCGPIO |= (1<<5)|(1<<4)|(0<<3)|(0<<2)|(0<<1)|(1<<0)|(1<<12)|(1<<8);
     //Pag 760 (GPIODIR) Habilta los pines como I/O un cero para entrada y un uno para salida
-    GPIOE_AHB->DIR = (0<<5) | (0<<4); //PE5 y PE4
+    GPIOE->DIR = (0<<5) | (0<<4); //PE5 y PE4
     //(GPIOAFSEL) pag.770 Enable alternate función para que el modulo analógico tenga control de esos pines
-    GPIOE_AHB->AFSEL =  (1<<4) | (1<<5 );
+    GPIOE->AFSEL =  (1<<4) | (1<<5 );
     //(GPIODEN) pag.781 desabilita el modo digital
-    GPIOE_AHB->DEN = (0<<4) | (0<<5 );
+    GPIOE->DEN = (0<<4) | (0<<5 );
     //Pag 787 GPIOPCTL registro combinado con el GPIOAFSEL y la tabla pag 1808
-    GPIOE_AHB->PCTL = GPIOE_AHB->PCTL & (0xFF00FFFF);
+    GPIOE->PCTL = GPIOE_AHB->PCTL & (0xFF00FFFF);
     //(GPIOAMSEL) pag.786 habilitar analogico
-    GPIOE_AHB->AMSEL = (1<<5) | (1<<4);
+    GPIOE->AMSEL = (1<<5) | (1<<4);
     //Pag 1159 El registro (ADCPC) establece la velocidad de conversión por segundo
     ADC0->PC = (0<<2)|(0<<1)|(1<<0);//250ksps
     //Pag 1099 Este registro (ADCSSPRI) configura la prioridad de los secuenciadores
