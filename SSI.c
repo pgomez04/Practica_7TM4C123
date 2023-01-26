@@ -3,29 +3,29 @@
 extern void Configurar_SSI2(void)
 {
     
-    SYSCTL->RCGCSSI |= (1<<0); //se activa el Modulo 0 SSI2
-    SYSCTL->RCGCGPIO |= (1<<0);//Puerto A
-    GPIOA->DIR |= (0<<2) | (1<<3) | (0<<4) | (1<<5); //selector es salida = 1
-    GPIOA->AFSEL = (1<<2)|(1<<3)|(1<<4)|(1<<5); //antes del 4 al 7
-    GPIOA->PCTL = (GPIOA->PCTL&0xFF0000FF) | 0xFF0000FF; // tabla p.688
+    SYSCTL->RCGCSSI |= (1<<2); //se activa el Modulo 2 SSI2
+    SYSCTL->RCGCGPIO |= (1<<1);//Puerto b
+    GPIOB->DIR |= (0<<4) | (1<<5) | (0<<6) | (1<<7); //selector es salida = 1
+    GPIOB->AFSEL = (1<<4)|(1<<5)|(1<<6)|(1<<7); //antes del 4 al 7
+    GPIOB->PCTL = (GPIOB->PCTL&0xFF0000FF) | 0x00222200; // tabla p.688
     //GPIOD_AHB->PCTL &= 0xFFFF0000;
     //GPIOD_AHB->PCTL |= 0x0000FFFF; // tabla p.688
-    GPIOA->DEN |= (1<<4)|(1<<5)|(1<<3)|(1<<2);
-    //                MISO    MOSI    CS    SCLK
+    GPIOA->DEN |= (1<<4)|(1<<5)|(1<<6)|(1<<7);
+    //             CLK    CS    MISO    MOSI
 
    // GPIOD_AHB->DATA |= (1<<5); //registrar CS
     //GPIOB->PUR |= (0<<7)|(0<<6)|(0<<5)|(0<<4);
     //GPIOB->PDR |= (0<<7)|(0<<6)|(0<<5)|(0<<4);
     //GPIOB->AMSEL |= (0<<7)|(0<<6)|(0<<5)|(0<<4);
     
-    SSI0->CR1 = (0<<1); //SSE=0 deshabilitar modulo
-    SSI0->CR1 = (0<<2); //MS = 0 modo maestro
-    SSI0->CC = (0x06<<6); //system clock = 4MHz
-    //SSInClk = SysClk / (CPSDVSR * (1 + SCR))
-    //2 500 000 = 50 000 000/(2*(1+SCR))
-    // SCR = (50 000 000/2 500 000*2) - 1 = 9
-    SSI2->CPSR =0x2; // 2.5 MHZ
-    SSI2->CR0 = (0x9<<8) | 0x07; // datos de 8 bits
+    SSI2->CR1 = (0<<1); //SSE=0 deshabilitar 
+    SSI2->CR1 = (0<<2); //MS = 0 modo maestro
+    SSI2->CC = (0x09<<0); //system clock = 16 o 20 MHz "DUDA EXISTENCIAL"
+    //SSInClk = SysClk / (CPSDVSR * (1 + SCR)) //VALORES PROPUESTOS
+    //4 MHZ = 20MHZ/(1*(1+4))
+    // SCR = (50 000 000/2 500 000*2) - 1 = 4
+    SSI2->CPSR =0x1; //VALOR DE CPSDVSR
+    SSI2->CR0 = (0x4<<8) | (0x01<<6) | (0x01<<4) | (0x0B<<0) ; // datos de 12 bits //EL VALOR DE SCR = 0X04 y 0x01 es por la polaridad 1
     SSI2->CR1 |= (1<<1); //SSE=1 habilitar modoulo p.961 (0x02)
 }
 
