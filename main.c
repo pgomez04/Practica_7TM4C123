@@ -15,7 +15,7 @@ int main(void)
     valor = 0;
     while(1)
     {
-        WriteSPI(valor); //variable volatile declarada en include
+        SPI_write(valor); //variable volatile declarada en include
         //aqui va un retardo
         contador++;
         if(contador=65535)//maximo valor de 2 a la 16 bits o a 12
